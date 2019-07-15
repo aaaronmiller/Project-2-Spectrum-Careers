@@ -1,38 +1,40 @@
-# Project Starter
+# liri-node-app
+TODO:project summary
 
-In this activity we will add the provided boilerplate to group project repos.
+# Getting Started
+TODO:installation instructions
 
-## Instructions
+# Prerequisites
+Node.js must be installed on machine. See https://nodejs.org/en/download/ for instructions.
 
-* Only one member of each group should complete this activity while the others watch.
+# Overview
+TODO:project overview
 
-* Copy the entire [Unsolved](Unsolved) folder to another location on your computers &mdash; wherever you would like your local copy of the group project to be.
+# Deployment
+Navigate to https://github.com/aaaronmiller/Project-2-Spectrum-Careers to clone.
 
-* Rename the copied "Unsolved" folder to the name of your project.
+# Built With
+Visual Studio Code, HTML, CSS, Javascript, JQuery, Bootstrap, Node.js, Express, Handlebars, mySql
 
-* Open the copied project folder's `package.json` file and change its `name` property to the name of your project.
+# Versioning
+We use github for version control (https://github.com/your/project/tags).
 
-* CD to the root of the copied project folder with your terminal and run the following commands:
+# In development
+TODO:problems and things to add
 
-  ```
-  git init
-  git add .
-  git commit -m "Initial commit"
-  ```
+# Author
+Aaron Miller, Keil Aloia, Hun Lee
 
-* Then copy the GitHub repo's remote SSH URL (the same URL you'd use to clone the repo).
+# License
+This project is not licensed.
 
-* Run the following commands in your terminal, replacing <remote-url> with your GitHub repo's remote SSH URL.
+# Acknowledgments
 
-  ```
-  git remote add origin <remote-url>
-  git push origin master
-  ```
+Joe Rehfuss
 
-* If completed successfully you should see all of the files uploaded to GitHub.
+Trae Shanks
 
-* All other group members should now clone the repo.
+Lan Truong
 
-* Discuss as a group:
+James Hanley
 
-  * How would you now add changes to this project?
