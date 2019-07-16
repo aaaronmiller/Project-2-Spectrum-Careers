@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html itemscope itemtype="http://schema.org/Article">
 
 <head>
   <meta charset="utf-8">
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="AIzaSyCai9KR67vHDMkD-pdRw4VkT24eGReDlps.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <title>Home Page</title>
@@ -13,11 +12,13 @@
 
 <body>
   
-  {{{body}}}
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  {{!-- {{{body}}} --}}
+    <div class="g-signin2" data-onsuccess="onSignIn" data-onfailure="onFailure" data-theme="dark"></div>
     <script>
+      function onFailure() { console.error('Sign in has failed!'); }
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
+        console.log("adsfgsfdgfsdg");
         var profile = googleUser.getBasicProfile();
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         console.log('Full Name: ' + profile.getName());
