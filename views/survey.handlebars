@@ -1,930 +1,413 @@
 <div id="home">
-    <div class="container">
-        <div class="row">
-            <div class="col-8 offset-2">
-                <h2>Megadocious Super Survey!!</h2>
-                <div class="jumbotron jumbotron-fluid" style="position: fixed; top: 3em; right: 1em;">
-                    <div class="container">
-                        <h1 class="display-4">Results:</h1><br>
-                        <p class="lead">A:<span class="AA">0</span><br>B:<span class="BB">0</span><br>C:<span class="CC">0</span><br>D:<span class="DD">0</span></p>
-                    </div>
-                </div>
-
-           
-                <form class="clearfix mb-4" action="POST">
-                    <div class="form-group">
-                        <label for="survey">1. When you encounter a group of strangers, do you:</label><br>
-                        <input type="radio" name="survey" value="1" id="q1">a.Talk to everybody you meet when
-                        given the chance.<br>
-                        <input type="radio" name="survey" value="-1" id="qq1">b.Keep to yourself and your those
-                        people you already know.<br>
+     <div class="container">
+          <div class="row">
+               <div class="col-8 offset-2">
+                    <h2>Megadocious Super Survey!!</h2>
+                    <div class="jumbotron jumbotron-fluid" style="position: fixed; top: 3em; right: 1em;">
+                         <div class="container">
+                              <h1 class="display-4">Results:</h1><br>
+                              <p class="lead">A:<span class="AA">0</span><br>B:<span class="BB">0</span><br>C:<span
+                                        class="CC">0</span><br>D:<span class="DD">0</span></p>
+                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="survey2">2. Which describes you better:</label><br>
-                        <input type="radio" name="survey2" value="1" id="q2">a.more sensible than
-                        experimental<br>
-                        <input type="radio" name="survey2" value="-1" id="qq2">b.more experimental than
-                        sensible<br>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="survey3">3. Which is less desirable:</label><br>
-                        <input type="radio" name="survey3" value="1" id="q3">a. Spending time daydreaming and
-                        fantasizing<br>
-                        <input type="radio" name="survey3" value="-1" id="qq3">b. Being stuck in a routine<br>
-                    </div>
+                    <form class="clearfix mb-4" action="POST">
+                         <div class="form-group">
+                              <label for="1">1. When you encounter a group of strangers, do you:</label><br>
+                              <input type="radio" name="1" class="btn" value="1" id="q1">a.Talk to everybody you meet
+                              when
+                              given the chance.<br>
+                              <input type="radio" name="1" class="btn" value="-1" id="q1">b.Keep to yourself and your
+                              those
+                              people you already know.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey4">4. Are you more drawn to:</label><br>
-                        <input type="radio" name="survey4" value="1" id="q4">a. Morals<br>
-                        <input type="radio" name="survey4" value="-1" id="qq4">b. Feelings<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="2">2. Which describes you better:</label><br>
+                              <input type="radio" name="2" class="btn" value="1">a.more sensible than
+                              experimental.<br>
+                              <input type="radio" name="2" class="btn" value="-1">b.more experimental than
+                              sensible.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey5">5. Do you have a greater preference for things that are:</label><br>
-                        <input type="radio" name="survey5" value="1" id="q5">a. Plausible <br>or<br>
-                        <input type="radio" name="survey5" value="-1" id="qq5">b. Heart-warming<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="3">3. Which is less desirable:</label><br>
+                              <input type="radio" name="3" class="btn" value="1">a. Spending time daydreaming
+                              and
+                              fantasizing.<br>
+                              <input type="radio" name="3" class="btn" value="-1">b. Being stuck in a
+                              routine.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey6">6. When doing tasks, which is preferable:</label><br>
-                        <input type="radio" name="survey6" value="1" id="q6">a. Setting defined goals<br>
-                        <input type="radio" name="survey6" value="-1" id="qq6">b. Doing whatever you feel at the
-                        time.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="4">4. Which do you prefer:</label><br>
+                              <input type="radio" name="4" class="btn" value="1">a. Logical reasoning.<br>
+                              <input type="radio" name="4" class="btn" value="-1">b. People getting along.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey7">7. When making choices do you:</label><br>
-                        <input type="radio" name="survey7" value="1" id="q7">a. Carefully evaluate the
-                        options.<br>
-                        <input type="radio" name="survey7" value="-1" id="qq7">b. Make hasty decisions.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="5">5. Do you have a greater preference for things that are:</label><br>
+                              <input type="radio" name="5" class="btn" value="1">a. Plausible.<br>or<br>
+                              <input type="radio" name="5" class="btn" value="-1">b. Heart-warming.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey8">8. When in social settings do you:</label><br>
-                        <input type="radio" name="survey8" value="1" id="q8">a. Attend until the very end, and
-                        feel energetic after.<br>
-                        <input type="radio" name="survey8" value="-1" id="qq8">b. Leave at the first
-                        opportunity, feeling drained.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="6">6. When doing tasks, which is preferable:</label><br>
+                              <input type="radio" name="6" class="btn" value="1">a. Setting defined goals.<br>
+                              <input type="radio" name="6" class="btn" value="-1">b. Doing whatever you feel at
+                              the
+                              time.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey9">9. Are you more drawn towards:</label><br>
-                        <input type="radio" name="survey9" value="1" id="q9">a. practical ideas<br>
-                        <input type="radio" name="survey9" value="-1" id="qq9">b. new ideas<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="7">7. When making choices do you:</label><br>
+                              <input type="radio" name="7" class="btn" value="1">a. Carefully evaluate the
+                              options.<br>
+                              <input type="radio" name="7" class="btn" value="-1">b. Make hasty decisions.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey10">10. Which interests you more:</label><br>
-                        <input type="radio" name="survey10" value="1" id="q10">a. Things that currently
-                        exist<br>
-                        <input type="radio" name="survey10" value="-1" id="qq10">b. Things that might exist.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="8">8. When in social settings do you:</label><br>
+                              <input type="radio" name="8" class="btn" value="1">a. Attend until the very end,
+                              and
+                              feel energetic after.<br>
+                              <input type="radio" name="8" class="btn" value="-1">b. Leave at the first
+                              opportunity, feeling drained.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey11">11. When judging which is more important:</label><br>
-                        <input type="radio" name="survey11" value="1" id="q11">a. Laws over situations.<br>
-                        <input type="radio" name="survey11" value="-1" id="qq11">b. Situations over laws.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="9">9. Are you more drawn towards:</label><br>
+                              <input type="radio" name="9" class="btn" value="1">a. practical ideas.<br>
+                              <input type="radio" name="9" class="btn" value="-1">b. new ideas.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey12">12. When you meet people are you more:</label><br>
-                        <input type="radio" name="survey12" value="1" id="q12">a. Cerebral<br>
-                        <input type="radio" name="survey12" value="-1" id="qq12">b. Emotional<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="10">10. Which interests you more:</label><br>
+                              <input type="radio" name="10" class="btn" value="1">a. Things that currently
+                              exist.<br>
+                              <input type="radio" name="10" class="btn" value="-1">b. Things that might
+                              exist.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey13">13. Which describes you better:</label><br>
-                        <input type="radio" name="survey13" value="1" id="q13">a. On time.<br>
-                        <input type="radio" name="survey13" value="-1" id="qq13">b. Almost on time.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="11">11. When judging which is more important:</label><br>
+                              <input type="radio" name="11" class="btn" value="1">a. Laws over situations.<br>
+                              <input type="radio" name="11" class="btn" value="-1">b. Situations over
+                              laws.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey14">14. Are you more irritated by:</label><br>
-                        <input type="radio" name="survey14" value="1" id="q14">a. Things not done.<br>
-                        <input type="radio" name="survey14" value="-1" id="qq14">b. Things that are done.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="12">12. When you meet people are you more:</label><br>
+                              <input type="radio" name="12" class="btn" value="1">a. Cerebral.<br>
+                              <input type="radio" name="12" class="btn" value="-1">b. Emotional.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey15">15. When with your friends do you:</label><br>
-                        <input type="radio" name="survey15" value="1" id="q15">a. Pay attention to changes their
-                        lives.<br>
-                        <input type="radio" name="survey15" value="-1" id="qq15">b. Pay attention to changes in
-                        the world at large.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="13">13. Which describes you better:</label><br>
+                              <input type="radio" name="13" class="btn" value="1">a. On time.<br>
+                              <input type="radio" name="13" class="btn" value="-1">b. Almost on time.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey16">16. When doing every day tasks, do you:</label><br>
-                        <input type="radio" name="survey16" value="1" id="q16">a. Do things like other people
-                        do.<br>
-                        <input type="radio" name="survey16" value="-1" id="qq16">b. Make up new ways to do things
-                        for yourself.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="14">14. Are you more irritated by:</label><br>
+                              <input type="radio" name="14" class="btn" value="1">a. Things not done.<br>
+                              <input type="radio" name="14" class="btn" value="-1">b. Things that are
+                              done.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey17">17. When thinking of new ideas, do you mostly consider:</label><br>
-                        <input type="radio" name="survey17" value="1" id="q17">a. the structure of how the
-                        information is organized.<br>
-                        <input type="radio" name="survey17" value="-1" id="qq17">b. the implications of what the
-                        idea suggests.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="15">15. When with your friends do you:</label><br>
+                              <input type="radio" name="15" class="btn" value="1">a. Pay attention to changes
+                              their
+                              lives.<br>
+                              <input type="radio" name="15" class="btn" value="-1">b. Pay attention to changes
+                              in
+                              the world at large.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey18">18. Which do you prefer:</label><br>
-                        <input type="radio" name="survey18" value="1" id="q18">a. Logical reasoning.<br>
-                        <input type="radio" name="survey18" value="-1" id="qq18">b. People getting along.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="16">16. When doing every day tasks, do you:</label><br>
+                              <input type="radio" name="16" class="btn" value="1">a. Do things like other
+                              people
+                              do.<br>
+                              <input type="radio" name="16" class="btn" value="-1">b. Make up new ways to do
+                              things
+                              for yourself.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey19">19. Which appeals to you more:</label><br>
-                        <input type="radio" name="survey19" value="1" id="q19">a. Consistant reasoning.<br>
-                        <input type="radio" name="survey19" value="-1" id="qq19">b. Peaceful relationships.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="17">17. When thinking of new ideas, do you mostly consider:</label><br>
+                              <input type="radio" name="17" class="btn" value="1">a. the structure of how the
+                              information is organized.<br>
+                              <input type="radio" name="17" class="btn" value="-1">b. the implications of what
+                              the
+                              idea suggests.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey20">20. Would you like to have:</label><br>
-                        <input type="radio" name="survey20" value="1" id="q20">a. Everything figured out.<br>
-                        <input type="radio" name="survey20" value="-1" id="qq20">b. Things left to be
-                        discovererd.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="18">18. Are you more drawn to:</label><br>
+                              <input type="radio" name="18" class="btn" value="1">a. Morals.<br>
+                              <input type="radio" name="18" class="btn" value="-1">b. Feelings.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey21">21. Are you more:</label><br>
-                        <input type="radio" name="survey21" value="1" id="q21">a. Businesslike<br>
-                        <input type="radio" name="survey21" value="-1" id="qq21">b. Playfull<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="19">19. Which appeals to you more:</label><br>
+                              <input type="radio" name="19" class="btn" value="1">a. Consistant reasoning.<br>
+                              <input type="radio" name="19" class="btn" value="-1">b. Peaceful
+                              relationships.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey22">22. WHen you meet new people are you more:</label><br>
-                        <input type="radio" name="survey22" value="1" id="q22">a. Open to new conversations and
-                        experiences.<br>
-                        <input type="radio" name="survey22" value="-1" id="qq22">b. Cautious and evaluative.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="20">20. Would you like to have:</label><br>
+                              <input type="radio" name="20" class="btn" value="1">a. Everything figured
+                              out.<br>
+                              <input type="radio" name="20" class="btn" value="-1">b. Things left to be
+                              discovererd.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey23">23. Evidence:</label><br>
-                        <input type="radio" name="survey23" value="1" id="q23">a. Illustrates a result.<br>
-                        <input type="radio" name="survey23" value="-1" id="qq23">b. Is open for
-                        interpretation.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="21">21. Are you more:</label><br>
+                              <input type="radio" name="21" class="btn" value="1">a. Businesslike.<br>
+                              <input type="radio" name="21" class="btn" value="-1">b. Playfull.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey24">24. Are idealists:</label><br>
-                        <input type="radio" name="survey24" value="1" id="q24">a. Out to lunch.<br>
-                        <input type="radio" name="survey24" value="-1" id="qq24">b. Interesting people.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="22">22. When you meet new people are you more:</label><br>
+                              <input type="radio" name="22" class="btn" value="1">a. Open to new conversations
+                              and
+                              experiences.<br>
+                              <input type="radio" name="22" class="btn" value="-1">b. Cautious and
+                              evaluative.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey25">25. Which describes you better:</label><br>
-                        <input type="radio" name="survey25" value="1" id="q25">a. Not hot-headed.<br>
-                        <input type="radio" name="survey25" value="-1" id="qq25">b. Not cool-hearted.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="23">23. Evidence:</label><br>
+                              <input type="radio" name="23" class="btn" value="1">a. Illustrates a result.<br>
+                              <input type="radio" name="23" class="btn" value="-1">b. Is open for
+                              interpretation.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey26">26. Which is more desirable:</label><br>
-                        <input type="radio" name="survey26" value="1" id="q26">a. Justice<br>
-                        <input type="radio" name="survey26" value="-1" id="qq26">b. Mercy<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="24">24. Are idealists:</label><br>
+                              <input type="radio" name="24" class="btn" value="1">a. Out to lunch.<br>
+                              <input type="radio" name="24" class="btn" value="-1">b. Interesting people.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey27">27. Is it better for things to:</label><br>
-                        <input type="radio" name="survey27" value="1" id="q27">a. Be carefully planned out.<br>
-                        <input type="radio" name="survey27" value="-1" id="qq27">b. Occur by chance.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="25">25. Which describes you better:</label><br>
+                              <input type="radio" name="25" class="btn" value="1">a. Not hot-headed.<br>
+                              <input type="radio" name="25" class="btn" value="-1">b. Not cool-hearted.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey28">28. Do you prefer:</label><br>
-                        <input type="radio" name="survey28" value="1" id="q28">a. Owning things.<br>
-                        <input type="radio" name="survey28" value="-1" id="qq28">b. Getting what you need when
-                        you need it.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="26">26. Which is more desirable:</label><br>
+                              <input type="radio" name="26" class="btn" value="1">a. Justice.<br>
+                              <input type="radio" name="26" class="btn" value="-1">b. Mercy.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey29">29. When around others do you:</label><br>
-                        <input type="radio" name="survey29" value="1" id="q29">a. Start the conversation.<br>
-                        <input type="radio" name="survey29" value="-1" id="qq29">b. Let others do it.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="27">27. Is it better for things to:</label><br>
+                              <input type="radio" name="27" class="btn" value="1">a. Be carefully planned
+                              out.<br>
+                              <input type="radio" name="27" class="btn" value="-1">b. Occur by chance.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey30">30. How do you feel about "common sense"?</label><br>
-                        <input type="radio" name="survey30" value="1" id="q30">a. Generally a good way to make
-                        decisions<br>
-                        <input type="radio" name="survey30" value="-1" id="qq30">b. Not always correct.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="28">28. Do you prefer:</label><br>
+                              <input type="radio" name="28" class="btn" value="1">a. Owning things.<br>
+                              <input type="radio" name="28" class="btn" value="-1">b. Getting what you need
+                              when
+                              you need it.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey31">31. Children should:</label><br>
-                        <input type="radio" name="survey31" value="1" id="q31">a. Focus on being practical.<br>
-                        <input type="radio" name="survey31" value="-1" id="qq31">b. Use their imagination.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="29">29. When around others do you:</label><br>
+                              <input type="radio" name="29" class="btn" value="1">a. Start the
+                              conversation.<br>
+                              <input type="radio" name="29" class="btn" value="-1">b. Let others do it.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey32">32. When deciding on something, you would rather:</label><br>
-                        <input type="radio" name="survey32" value="1" id="q32">a. Do what you think is the right
-                        thing.<br>
-                        <input type="radio" name="survey32" value="-1" id="qq32">b. Do what feels best.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="30">30. How do you feel about "common sense"?</label><br>
+                              <input type="radio" name="30" class="btn" value="1">a. Generally a good way to
+                              make
+                              decisions.<br>
+                              <input type="radio" name="30" class="btn" value="-1">b. Not always correct.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey33">33. Which describes you better:</label><br>
-                        <input type="radio" name="survey33" value="1" id="q33">a. Tough, not compassionante.<br>
-                        <input type="radio" name="survey33" value="-1" id="qq33">a. Tough, not
-                        compassionante.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="31">31. Children should:</label><br>
+                              <input type="radio" name="31" class="btn" value="1">a. Focus on being
+                              practical.<br>
+                              <input type="radio" name="31" class="btn" value="-1">b. Use their
+                              imagination.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey34">34. Is it better to be:</label><br>
-                        <input type="radio" name="survey34" value="1" id="q34">a. organized<br>
-                        <input type="radio" name="survey34" value="-1" id="qq34">b. flexible <br>
-                    </div>
+                         <div class="form-group">
+                              <label for="32">32. When deciding on something, you would rather:</label><br>
+                              <input type="radio" name="32" class="btn" value="1">a. Do what you think is the
+                              right
+                              thing.<br>
+                              <input type="radio" name="32" class="btn" value="-1">b. Do what feels best.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey35">35. Are you more:</label><br>
-                        <input type="radio" name="survey35" value="1" id="q35">a. Deliberate<br>
-                        <input type="radio" name="survey35" value="-1" id="qq35">b. Spontaneous<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="33">33. Which describes you better:</label><br>
+                              <input type="radio" name="33" class="btn" value="1">a. Tough, not
+                              compassionante.<br>
+                              <input type="radio" name="33" class="btn" value="-1">a. Tough, not
+                              compassionante.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey36">36. After meeting several new people do you feel:</label><br>
-                        <input type="radio" name="survey36" value="1" id="q36">a. energized and excited.<br>
-                        <input type="radio" name="survey36" value="-1" id="qq36">b. drained and tired.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="34">34. Is it better to be:</label><br>
+                              <input type="radio" name="34" class="btn" value="1">a. organized.<br>
+                              <input type="radio" name="34" class="btn" value="-1">b. flexible.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey37">37. Are you more:</label><br>
-                        <input type="radio" name="survey37" value="1" id="q37">a. rational.<br>
-                        <input type="radio" name="survey37" value="-1" id="qq37">b. imaginative.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="35">35. Are you more:</label><br>
+                              <input type="radio" name="35" class="btn" value="1">a. Deliberate.<br>
+                              <input type="radio" name="35" class="btn" value="-1">b. Spontaneous.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey38">38. When working with a group, are you more interested in:</label><br>
-                        <input type="radio" name="survey38" value="1" id="q38">a. How others can complete the
-                        task at hand.<br>
-                        <input type="radio" name="survey38" value="-1" id="qq38">b. How others understand what
-                        the task is.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="36">36. After meeting several new people do you feel:</label><br>
+                              <input type="radio" name="36" class="btn" value="1">a. energized and excited.<br>
+                              <input type="radio" name="36" class="btn" value="-1">b. drained and tired.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey39">39. What do you prefer:</label><br>
-                        <input type="radio" name="survey39" value="1" id="q39">a. A well thought out debate.<br>
-                        <input type="radio" name="survey39" value="-1" id="qq39">b. A consensus.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="37">37. Are you more:</label><br>
+                              <input type="radio" name="37" class="btn" value="1">a. rational.<br>
+                              <input type="radio" name="37" class="btn" value="-1">b. imaginative.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey40">40. Are you driven your:</label><br>
-                        <input type="radio" name="survey40" value="1" id="q40">a. Head<br>or<br>
-                        <input type="radio" name="survey40" value="-1" id="qq40">b. Heart<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="38">38. When working with a group, are you more interested in:</label><br>
+                              <input type="radio" name="38" class="btn" value="1">a. How others can complete
+                              the
+                              task at hand.<br>
+                              <input type="radio" name="38" class="btn" value="-1">b. How others understand
+                              what
+                              the task is.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey41">41. Would you rather do work that is:</label><br>
-                        <input type="radio" name="survey41" value="1" id="q41">a. Clearly defined.<br>
-                        <input type="radio" name="survey41" value="-1" id="qq41">b. Loosely defined.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="39">39. What do you prefer:</label><br>
+                              <input type="radio" name="39" class="btn" value="1">a. A well thought out
+                              debate.<br>
+                              <input type="radio" name="39" class="btn" value="-1">b. A consensus.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey42">42. Do you prefer:</label><br>
-                        <input type="radio" name="survey42" value="1" id="q42">a. Form<br>
-                        <input type="radio" name="survey42" value="-1" id="qq42">b. Function<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="40">40. Are you driven more by your:</label><br>
+                              <input type="radio" name="40" class="btn" value="1">a. Head.<br>or<br>
+                              <input type="radio" name="40" class="btn" value="-1">b. Heart.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey43">43. Would you rather have:</label><br>
-                        <input type="radio" name="survey43" value="1" id="q43">a. Lots of friends whom you
-                        occasionaly see.<br>
-                        <input type="radio" name="survey43" value="-1" id="qq43">b. Fewer friends that you see
-                        often.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="41">41. Would you rather do work that is:</label><br>
+                              <input type="radio" name="41" class="btn" value="1">a. Clearly defined.<br>
+                              <input type="radio" name="41" class="btn" value="-1">b. Loosely defined.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey44">44. Are you more driven by:</label><br>
-                        <input type="radio" name="survey44" value="1" id="q44">a. details.<br>
-                        <input type="radio" name="survey44" value="-1" id="qq44">b. policies.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="42">42. Do you prefer:</label><br>
+                              <input type="radio" name="42" class="btn" value="1">a. Form.<br>
+                              <input type="radio" name="42" class="btn" value="-1">b. Function.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey45">45. Which is more difficult?</label><br>
-                        <input type="radio" name="survey45" value="1" id="q45">a. Adopting an unfamiliar
-                        viewpoint.<br>
-                        <input type="radio" name="survey45" value="-1" id="qq45">b. Direct the actions of a
-                        group.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="43">43. Would you rather have:</label><br>
+                              <input type="radio" name="43" class="btn" value="1">a. Lots of friends whom you
+                              occasionaly see.<br>
+                              <input type="radio" name="43" class="btn" value="-1">b. Fewer friends that you
+                              see
+                              often.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey46">46. Which is the greater asset:</label><br>
-                        <input type="radio" name="survey46" value="1" id="q46">a. An orderly mind.<br>
-                        <input type="radio" name="survey46" value="-1" id="qq46">b. An open heart.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="44">44. Are you more driven by:</label><br>
+                              <input type="radio" name="44" class="btn" value="1">a. details.<br>
+                              <input type="radio" name="44" class="btn" value="-1">b. policies.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey47">47. Which ideal do you most closely embody:</label><br>
-                        <input type="radio" name="survey47" value="1" id="q47">a. Determination<br>
-                        <input type="radio" name="survey47" value="-1" id="qq47">b. Dedication<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="45">45. Which is more difficult?</label><br>
+                              <input type="radio" name="45" class="btn" value="1">a. Adopting an unfamiliar
+                              viewpoint.<br>
+                              <input type="radio" name="45" class="btn" value="-1">b. Direct the actions of a
+                              group.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey48">48. Do you most often choose things that are:</label><br>
-                        <input type="radio" name="survey48" value="1" id="q48">a. defined and permanent.<br>
-                        <input type="radio" name="survey48" value="-1" id="qq48">b. uncertain and mutable.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="46">46. Which is the greater asset:</label><br>
+                              <input type="radio" name="46" class="btn" value="1">a. An orderly mind.<br>
+                              <input type="radio" name="46" class="btn" value="-1">b. An open heart.<br>
+                         </div>
 
-                    <div class="form-group">
-                        <label for="survey49">49. Would you rather be in a situtation:</label><br>
-                        <input type="radio" name="survey49" value="1" id="q49">a. before a judgement has been
-                        made.<br>
-                        <input type="radio" name="survey49" value="-1" id="qq49">b. after a judgement has been
-                        made.<br>
-                    </div>
+                         <div class="form-group">
+                              <label for="47">47. Which ideal do you most closely embody:</label><br>
+                              <input type="radio" name="47" class="btn" value="1">a. Determination.<br>
+                              <input type="radio" name="47" class="btn" value="-1">b. Dedication.<br>
+                         </div>
 
-            </div>
+                         <div class="form-group">
+                              <label for="48">48. Do you most often choose things that are:</label><br>
+                              <input type="radio" name="48" class="btn" value="1">a. defined and permanent.<br>
+                              <input type="radio" name="48" class="btn" value="-1">b. uncertain and
+                              mutable.<br>
+                         </div>
 
-            <button id="submit" class="btn btn-primary float-right">Submit</button>
-            </form>
+                         <div class="form-group">
+                              <label for="49">49. Would you rather be in a situtation:</label><br>
+                              <input type="radio" name="49" class="btn" value="1">a. before a judgement has
+                              been
+                              made.<br>
+                              <input type="radio" name="49" class="btn" value="-1">b. after a judgement has
+                              been
+                              made.<br>
+                         </div>
 
-        </div>
-    </div>
+               </div>
+
+               <button id="submit" class="btn btn-primary float-right">Submit</button>
+               </form>
+
+          </div>
+     </div>
 </div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script>
-    results = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-    AA = 0;
-    BB = 0;
-    CC = 0;
-    DD = 0;
-    function score() {
-        AA = results[1] + results[8] + results[15] + results[22] + results[29] + results[36] + results[43];
-        BB = results[2] + results[3] + results[9] + results[10] + results[16] + results[17] + results[23] + results[24] + results[30] + results[31] + results[37] + results[38] + results[44] + results[45];
-        CC = results[4] + results[5] + results[11] + results[12] + results[18] + results[19] + results[25] + results[26] + results[32] + results[33] + results[39] + results[40] + results[46] + results[47];
-        DD = results[6] + results[7] + results[13] + results[14] + results[20] + results[21] + results[27] + results[28] + results[34] + results[35] + results[41] + results[42] + results[48] + results[49];
-        $(".AA").text(AA);
-        $(".BB").text(BB);
-        $(".CC").text(CC);
-        $(".DD").text(DD);
-    };
+     results = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+     AA = 0;
+     BB = 0;
+     CC = 0;
+     DD = 0;
+     function score() {
+          AA = results[1] + results[8] + results[15] + results[22] + results[29] + results[36] + results[43];
+          BB = results[2] + results[3] + results[9] + results[10] + results[16] + results[17] + results[23] + results[24] + results[30] + results[31] + results[37] + results[38] + results[44] + results[45];
+          CC = results[4] + results[5] + results[11] + results[12] + results[18] + results[19] + results[25] + results[26] + results[32] + results[33] + results[39] + results[40] + results[46] + results[47];
+          DD = results[6] + results[7] + results[13] + results[14] + results[20] + results[21] + results[27] + results[28] + results[34] + results[35] + results[41] + results[42] + results[48] + results[49];
+          $(".AA").text(AA);
+          $(".BB").text(BB);
+          $(".CC").text(CC);
+          $(".DD").text(DD);
+     };
 
-    {{!-- function myFunc() {
-        var moose = $(this).find("class");
-        moose = parseInt(moose);
-        console.log('moose:' + moose);
-        var dog = $(this).val();
-        console.log('dog:' + dog);
-        results[moose] = parseInt(dog);
-        console.log(results);score();
-
-    }; --}}
-
-
-    $("#q1").click(function (event){
-         var dog = $(this).val();
-         results[1] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq1").click(function (event){
-         var dog = $(this).val();
-         results[1] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q2").click(function (event){
-         var dog = $(this).val();
-         results[2] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq2").click(function (event){
-         var dog = $(this).val();
-         results[2] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q3").click(function (event){
-         var dog = $(this).val();
-         results[3] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq3").click(function (event){
-         var dog = $(this).val();
-         results[3] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q4").click(function (event){
-         var dog = $(this).val();
-         results[4] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq4").click(function (event){
-         var dog = $(this).val();
-         results[4] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q5").click(function (event){
-         var dog = $(this).val();
-         results[5] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq5").click(function (event){
-         var dog = $(this).val();
-         results[5] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q6").click(function (event){
-         var dog = $(this).val();
-         results[6] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq6").click(function (event){
-         var dog = $(this).val();
-         results[6] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q7").click(function (event){
-         var dog = $(this).val();
-         results[7] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq7").click(function (event){
-         var dog = $(this).val();
-         results[7] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q8").click(function (event){
-         var dog = $(this).val();
-         results[8] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq8").click(function (event){
-         var dog = $(this).val();
-         results[8] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q9").click(function (event){
-         var dog = $(this).val();
-         results[9] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq9").click(function (event){
-         var dog = $(this).val();
-         results[9] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q10").click(function (event){
-         var dog = $(this).val();
-         results[10] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq10").click(function (event){
-         var dog = $(this).val();
-         results[10] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q11").click(function (event){
-         var dog = $(this).val();
-         results[11] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq11").click(function (event){
-         var dog = $(this).val();
-         results[11] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q12").click(function (event){
-         var dog = $(this).val();
-         results[12] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq12").click(function (event){
-         var dog = $(this).val();
-         results[12] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q13").click(function (event){
-         var dog = $(this).val();
-         results[13] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq13").click(function (event){
-         var dog = $(this).val();
-         results[13] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q14").click(function (event){
-         var dog = $(this).val();
-         results[14] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq14").click(function (event){
-         var dog = $(this).val();
-         results[14] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q15").click(function (event){
-         var dog = $(this).val();
-         results[15] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq15").click(function (event){
-         var dog = $(this).val();
-         results[15] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q16").click(function (event){
-         var dog = $(this).val();
-         results[16] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq16").click(function (event){
-         var dog = $(this).val();
-         results[16] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q17").click(function (event){
-         var dog = $(this).val();
-         results[17] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq17").click(function (event){
-         var dog = $(this).val();
-         results[17] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q18").click(function (event){
-         var dog = $(this).val();
-         results[18] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq18").click(function (event){
-         var dog = $(this).val();
-         results[18] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q19").click(function (event){
-         var dog = $(this).val();
-         results[19] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq19").click(function (event){
-         var dog = $(this).val();
-         results[19] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q20").click(function (event){
-         var dog = $(this).val();
-         results[20] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq20").click(function (event){
-         var dog = $(this).val();
-         results[20] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q21").click(function (event){
-         var dog = $(this).val();
-         results[21] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq21").click(function (event){
-         var dog = $(this).val();
-         results[21] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q22").click(function (event){
-         var dog = $(this).val();
-         results[22] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq22").click(function (event){
-         var dog = $(this).val();
-         results[22] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q23").click(function (event){
-         var dog = $(this).val();
-         results[23] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq23").click(function (event){
-         var dog = $(this).val();
-         results[23] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q24").click(function (event){
-         var dog = $(this).val();
-         results[24] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq24").click(function (event){
-         var dog = $(this).val();
-         results[24] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q25").click(function (event){
-         var dog = $(this).val();
-         results[25] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq25").click(function (event){
-         var dog = $(this).val();
-         results[25] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q26").click(function (event){
-         var dog = $(this).val();
-         results[26] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq26").click(function (event){
-         var dog = $(this).val();
-         results[26] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q27").click(function (event){
-         var dog = $(this).val();
-         results[27] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq27").click(function (event){
-         var dog = $(this).val();
-         results[27] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q28").click(function (event){
-         var dog = $(this).val();
-         results[28] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq28").click(function (event){
-         var dog = $(this).val();
-         results[28] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q29").click(function (event){
-         var dog = $(this).val();
-         results[29] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq29").click(function (event){
-         var dog = $(this).val();
-         results[29] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q30").click(function (event){
-         var dog = $(this).val();
-         results[30] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq30").click(function (event){
-         var dog = $(this).val();
-         results[30] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q31").click(function (event){
-         var dog = $(this).val();
-         results[31] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq31").click(function (event){
-         var dog = $(this).val();
-         results[31] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q32").click(function (event){
-         var dog = $(this).val();
-         results[32] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq32").click(function (event){
-         var dog = $(this).val();
-         results[32] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q33").click(function (event){
-         var dog = $(this).val();
-         results[33] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq33").click(function (event){
-         var dog = $(this).val();
-         results[33] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q34").click(function (event){
-         var dog = $(this).val();
-         results[34] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq34").click(function (event){
-         var dog = $(this).val();
-         results[34] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q35").click(function (event){
-         var dog = $(this).val();
-         results[35] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq35").click(function (event){
-         var dog = $(this).val();
-         results[35] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q36").click(function (event){
-         var dog = $(this).val();
-         results[36] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq36").click(function (event){
-         var dog = $(this).val();
-         results[36] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q37").click(function (event){
-         var dog = $(this).val();
-         results[37] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq37").click(function (event){
-         var dog = $(this).val();
-         results[37] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q38").click(function (event){
-         var dog = $(this).val();
-         results[38] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq38").click(function (event){
-         var dog = $(this).val();
-         results[38] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q39").click(function (event){
-         var dog = $(this).val();
-         results[39] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq39").click(function (event){
-         var dog = $(this).val();
-         results[39] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q40").click(function (event){
-         var dog = $(this).val();
-         results[40] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq40").click(function (event){
-         var dog = $(this).val();
-         results[40] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q41").click(function (event){
-         var dog = $(this).val();
-         results[41] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq41").click(function (event){
-         var dog = $(this).val();
-         results[41] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q42").click(function (event){
-         var dog = $(this).val();
-         results[42] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq42").click(function (event){
-         var dog = $(this).val();
-         results[42] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q43").click(function (event){
-         var dog = $(this).val();
-         results[43] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq43").click(function (event){
-         var dog = $(this).val();
-         results[43] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q44").click(function (event){
-         var dog = $(this).val();
-         results[44] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq44").click(function (event){
-         var dog = $(this).val();
-         results[44] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q45").click(function (event){
-         var dog = $(this).val();
-         results[45] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq45").click(function (event){
-         var dog = $(this).val();
-         results[45] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q46").click(function (event){
-         var dog = $(this).val();
-         results[46] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq46").click(function (event){
-         var dog = $(this).val();
-         results[46] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q47").click(function (event){
-         var dog = $(this).val();
-         results[47] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq47").click(function (event){
-         var dog = $(this).val();
-         results[47] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q48").click(function (event){
-         var dog = $(this).val();
-         results[48] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq48").click(function (event){
-         var dog = $(this).val();
-         results[48] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#q49").click(function (event){
-         var dog = $(this).val();
-         results[49] = parseInt(dog);
-         console.log(results);score();
-    });
-    $("#qq49").click(function (event){
-         var dog = $(this).val();
-         results[49] = parseInt(dog);
-         console.log(results);score();
-    });
-    
-    
-
-
-
-    {{!-- results = [0, 0, 0, 0];
-    abomination = 0;
-    dog = 0;
-    cat = 0;
-    hasclicked = 0;
-    $(".A").click(function (event) {
-        var dog = $(this).val();
-        cat = results[0];
-        console.log('dog', dog);
-          if (hasclicked = 1) {
-            abomination = parseInt(dog) + cat;
-        };
-        function breed () {
-            abomination = parseInt(dog) + cat;
-            hasclicked = 1
-        };
-
-      
-        console.log('abom',abomination);
-        results[0] = abomination;
-        console.log(results);score();
-        $(".AA").text(results[0]);
-    })
-
-    $(".B").click(function (event) {
-        var dog = $(this).val();
-        console.log(dog);
-        cat = results[1];
-        abomination = parseInt(dog) + cat;
-        results[1] = abomination;
-        console.log(results);score();
-        $(".BB").text(results[1]);
-    })
-
-    $(".C").click(function (event) {
-        var dog = $(this).val();
-        console.log(dog);
-        cat = results[2];
-        abomination = parseInt(dog) + cat;
-        results[2] = abomination;
-        console.log(results);score();
-        $(".CC").text(results[2]);
-    })
-
-    $(".D").click(function (event) {
-        var dog = $(this).val();
-        console.log(dog);
-        cat = results[3];
-        abomination = parseInt(dog) + cat;
-        results[3] = abomination;
-        console.log(results);score();
-        $(".DD").text(results[3]);
-    }) --}}
-
+     $(".btn").click(function myFunc() {
+          var moose = $(this).attr("name");
+          moose = parseInt(moose);
+          var dog = $(this).val();
+          results[moose] = parseInt(dog);
+          {{!-- console.log('dog:' + dog);
+          console.log('moose:' + moose);
+          console.log(results); --}}
+          score();
+     });
 </script>
