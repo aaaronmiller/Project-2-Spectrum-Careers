@@ -15,23 +15,19 @@
             <a class="nav-link" href="/profile">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Employee</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#">Employer</a>
           </li>
         </ul>
         <form class="form-inline">
           <div class="md-form my-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <span class="input-group-btn">
-        <button class="btn purple-gradient btn-sm" type="button">Search</button>
-    </span>
-          <span class="input-group-btn">
-        <button class="g-signin2 btn-sm" id="googleId" data-onsuccess="onSignIn" data-onfailure="onFailure" data-theme="dark"></button>
-
-    </span>
-          </div>
+            <span class="input-group-btn">
+              <button class="btn purple-gradient btn-sm" type="button">Search</button>
+            </span>
+            <span class="input-group-btn">
+              <button class="g-signin2" id="googleId" data-onsuccess="onSignIn" data-onfailure="onFailure"
+                data-theme="dark"></button>
+            </span> </div>
         </form>
       </div>
     </div>
@@ -50,61 +46,63 @@
       <br>
       <div class="container">
         <!--Grid row-->
-        <div class="row">
-          <!--Grid column-->
-          <div class="col-md-3"></div>
-          <div class="col-md-6  white-text text-center text-md-left">
-            <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s"><img
-                src="img/spectumONE (2).png" class="title" alt="" srcset=""> </h1>
-            <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-            <h5 class="mb-3 wow text-center fadeInLeft" data-wow-delay="1s">Let your personality radiate. Don't let categories define you.</h5>
-          </div>
-          <!--Grid column-->
-          <!--Grid column-->
-          <!--1st row ended-->
-        </div>
         <div class="row mt-5">
-        <div class="col-xl-2"></div>
-        <div class="col-xl-8">
 
-          <!--Form-->
-          <div class="card wow fadeInRight" data-wow-delay="0.3s">
-            <div class="card-body">
-              <!--Header-->
-              <div class="text-center">
-                <h3 class="white-text">
-                  <i class="fas fa-search white-text"></i>  Job Search</h3>
-                <hr class="hr-light">
-              </div>
-              <!--Body-->
-              <div class="md-form">
-                <i class="far fa-id-badge prefix white-text active"></i>
-                <input type="text" id="form3" class="white-text form-control">
-                <label for="form3" class="active">Job Title</label>
-              </div>
-              <div class="md-form">
-                <i class="fas fa-location-arrow prefix white-text active"></i>
-                <input type="text" class="white-text form-control" id="inputCityMD">
-                <label for="inputCityMD">Your Location</label>
-              
-              
-              </div>
-    </select>
-              <div class="md-form">
-                <i class="far fa-user prefix white-text active"></i>
-                <input type="text" class="white-text form-control" id="inputCityMD">
-                <label for="form4">Personality</label>
-                
-              </div>
-              <div class="text-center mt-4">
-                <button class="btn purple-gradient" id="btn-one" onclick="scrollWin()">Search</button>               
+          <!--Grid column-->
+          <div class="col-xl-1 mb-5"></div>
+          <div class="col-xl-10 mb-5">
+            <!--Form-->
+            <div class="card wow fadeInRight" data-wow-delay="0.3s">
+              <div class="card-body">
+                <!--Header-->
+                <div class="text-center">
+                  <h3 class="white-text">
+                    <i class="fas fa-user white-text"></i> Register:</h3>
+                  <hr class="hr-light">
+                </div>
+                <!--Body-->
+                <div class="md-form">
+                  <i class="fas fa-user prefix white-text active"></i>
+                  <input type="text" id="form3" class="white-text form-control">
+                  <label for="form3" class="active">Your name</label>
+                </div>
+                <div class="md-form">
+                  <i class="fas fa-envelope prefix white-text active"></i>
+                  <input type="email" id="form2" class="white-text form-control">
+                  <label for="form2" class="active">Your email</label>
+                </div>
+                <div class="md-form">
+                  <i class="fas fa-lock prefix white-text active"></i>
+                  <input type="password" id="form4" class="white-text form-control">
+                  <label for="form4">Your password</label>
+                </div>
+                <div class="text-center mt-4">
+                  <button class="btn purple-gradient" onclick="window.location.href = '/profile/question';">Sign up</button>
+                  <hr class="hr-light mb-3 mt-4">
+                  <div class="inline-ul text-center">
+                    <a class="p-2 m-2 tw-ic"></a>
+                    <button class="g-signin2" id="googleId" data-onsuccess="onSignIn" data-onfailure="onFailure"
+                      data-theme="dark"></button>
+                    </a>
+                    <a class="p-2 m-2 tw-ic">
+                      <a href="https://www.twitter.com" class="btn"><i class="fab fa-twitter white-text"></i></button>
+                      </a>
+                      <a class="p-2 m-2 li-ic">
+                        <a href="https://www.linkedin.com" class="btn"><i class="fab fa-linkedin-in white-text">
+                          </i></button>
+                        </a>
+                        <a class="p-2 m-2 ins-ic">
+                          <a href="https://www.github.com" class="btn"><i class="fab fa-github white-text">
+                            </i></button>
+                          </a>
+                  </div>
+                </div>
               </div>
             </div>
+            <!--/.Form-->
           </div>
+          <!--Grid column-->
         </div>
-        </div>
-        <!--/.Form-->
-        <!--Grid column-->
         <!--Grid row-->
       </div>
       <!-- Content -->
@@ -254,7 +252,6 @@
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
-
 <!-- SCRIPTS -->
 <!-- JQuery -->
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -268,28 +265,23 @@
   new WOW().init();
 </script>
 <script>
-      function onFailure() { console.error('Sign in has failed!'); }
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        console.log("adsfgsfdgfsdg");
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
+  function onFailure() {
+    console.error('Sign in has failed!');
+  }
 
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      }
-    </script>
-    <script>
-      function scrollWin() {
-    window.scrollBy(0, 1050);
+  function onSignIn(googleUser) {
+    // Useful data for your client-side scripts:
+    console.log("adsfgsfdgfsdg");
+    var profile = googleUser.getBasicProfile();
+    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+    console.log('Full Name: ' + profile.getName());
+    console.log('Given Name: ' + profile.getGivenName());
+    console.log('Family Name: ' + profile.getFamilyName());
+    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Email: " + profile.getEmail());
+
+    // The ID token you need to pass to your backend:
+    var id_token = googleUser.getAuthResponse().id_token;
+    console.log("ID Token: " + id_token);
   }
 </script>
-<script>$('#btn-one').click(function() {
-  $('#btn-one').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading...').addClass('disabled');
-});</script>

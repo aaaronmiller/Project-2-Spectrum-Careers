@@ -5,7 +5,24 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("index", {
-        msg: "Welcome!",
+        msg: "",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/profile", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("profile", {
+        msg: "",
+        examples: dbExamples
+      });
+    });
+  });
+  app.get("/profile/question", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("profile/question", {
+        msg: "",
         examples: dbExamples
       });
     });
