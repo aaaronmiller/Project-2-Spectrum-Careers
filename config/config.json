@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "dlgjs123!",
-    "database": "exampledb",
+    "database": "spectrum_db",
     "host": "localhost",
     "dialect": "mysql"
   },
