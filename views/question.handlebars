@@ -310,14 +310,14 @@
                               <label for="33">33. Which describes you better:</label><br>
                               <input type="radio" name="33" class="btn" value="1">a. Tough, not
                               compassionante.<br>
-                              <input type="radio" name="33" class="btn" value="-1">a. Tough, not
-                              compassionante.<br>
+                              <input type="radio" name="33" class="btn" value="-1">a. Compassionante, not tough.
+                              .<br>
                          </div>
 
                          <div class="form-group">
                               <label for="34">34. Is it better to be:</label><br>
-                              <input type="radio" name="34" class="btn" value="1">a. organized.<br>
-                              <input type="radio" name="34" class="btn" value="-1">b. flexible.<br>
+                              <input type="radio" name="34" class="btn" value="1">a. Organized.<br>
+                              <input type="radio" name="34" class="btn" value="-1">b. Flexible.<br>
                          </div>
 
                          <div class="form-group">
@@ -562,12 +562,15 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script>
-     results = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-     AA = 0;
-     BB = 0;
-     CC = 0;
-     DD = 0;
-     function score() {
+results = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+AA = 0;
+BB = 0;
+CC = 0;
+DD = 0;
+role = "";
+temperment = "";
+
+function score() {
           AA = results[1] + results[8] + results[15] + results[22] + results[29] + results[36] + results[43];
           BB = results[2] + results[3] + results[9] + results[10] + results[16] + results[17] + results[23] + results[24] + results[30] + results[31] + results[37] + results[38] + results[44] + results[45];
           CC = results[4] + results[5] + results[11] + results[12] + results[18] + results[19] + results[25] + results[26] + results[32] + results[33] + results[39] + results[40] + results[46] + results[47];
@@ -576,15 +579,56 @@
           $(".BB").text(BB);
           $(".CC").text(CC);
           $(".DD").text(DD);
+          getRole();
+};
+
+
+function getRole() {
+     if ((AA > 0) && (BB < 0) && (DD > 0) || ((AA > 0) && (BB > 0) && (CC > 0))) {
+          role = "RED";
+          return;
+          };
+     if ((AA < 0) && (BB < 0) && (DD > 0) || ((AA < 0) && (BB > 0) && (CC > 0))) {
+          role = "GREEN";
+          return;
+          };
+     if ((AA > 0) && (BB < 0) && (DD < 0) || ((AA > 0) && (BB > 0) && (CC < 0))) {
+          role = "YELLOW";
+          return;
+          };
+     if ((AA < 0) && (BB < 0) && (DD < 0) || ((AA < 0) && (BB > 0) && (CC < 0))) {
+          role = "BLUE";
+          return;
+          };
+};
+
+function getTemperment() {
+     if ((BB < 0) && (CC < 0)) {
+          temperment = "IDEALIST";
+          return;
      };
-     $(".btn").click(function myFunc() {
-          var moose = $(this).attr("name");
-          moose = parseInt(moose);
-          var dog = $(this).val();
-          results[moose] = parseInt(dog);
-          {{!-- console.log('dog:' + dog);
-          console.log('moose:' + moose);
-          console.log(results); --}}
-          score();
-     });
+     if ((BB < 0) && (CC > 0)) {
+          temperment = "RATIONAL";
+          return;
+     };
+     if ((BB > 0) && (DD < 0)) {
+          temperment = "ARTISAN";
+          return;
+     };
+     if ((BB > 0) && (CC > 0)) {
+          temperment = "GUARDIAN";
+          return;
+     };
+};
+     
+$(".btn").click(function myFunc() {
+     var moose = $(this).attr("name");
+     moose = parseInt(moose);
+     var dog = $(this).val();
+     results[moose] = parseInt(dog);
+     {{!-- console.log('dog:' + dog);
+     console.log('moose:' + moose);
+     console.log(results); --}}
+     score();
+});
 </script>
