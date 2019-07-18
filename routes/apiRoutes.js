@@ -1,4 +1,4 @@
-var db = require("../models/index");
+var db = require("../models");
 var multer  = require('multer')
 var upload = multer({ dest: 'uploads/' })
 
@@ -10,14 +10,14 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/user/profile', upload.single('file1'), function (req, res, next) {
+  app.post('/user/profile',upload.single('file1'), function (req, res, next) {
 
     console.log("posting to database");
     console.log(req.body);
     console.log(req.file);
     
 
-    db.Data.create({
+    db.user.create({
       firstname: req.body.firstname,
       summary: req.body.bio,
       resume: req.file
@@ -26,8 +26,23 @@ module.exports = function(app) {
       res.end();
     });
 
-    // req.file is the `avatar` file
-    // req.body will hold the text fields, if there were any
+  })
+  app.post('/employer/profile',upload.none(), function (req, res, next) {
+
+    console.log("posting to database");
+    console.log(req.body);
+
+    // console.log(req.file);
+    
+
+    db.Employer.create({
+      jobtitle: req.body.jobtitle,
+      bio: req.body.bio,
+      companysize: req.body.companysize
+    }).then(function(results) {
+      // `results` here would be the newly created chirp
+      res.end();
+    });
   })
 
 
