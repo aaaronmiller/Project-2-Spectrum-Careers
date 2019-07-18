@@ -8,14 +8,26 @@
   },
   "license": "ISC",
   "dependencies": {
+    "all": "0.0.0",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
+    "multer": "^1.4.2",
     "mysql2": "^1.6.5",
     "sequelize": "^5.8.6"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
     "prettier": "^1.17.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaaronmiller/Project-2-Spectrum-Careers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/aaaronmiller/Project-2-Spectrum-Careers/issues"
+  },
+  "homepage": "https://github.com/aaaronmiller/Project-2-Spectrum-Careers#readme"
 }
