@@ -2,8 +2,9 @@ html,
 body,
 header,
 .view {
-  height: 100%;
+  height: 2750px;
 }
+
 
 @media (max-width: 740px) {
   html,
@@ -70,3 +71,10 @@ h5 {
   border: none;
   cursor:pointer;
   }
+
+#home {
+  color: white;
+}
+.jumbotron {
+  color: black;
+}

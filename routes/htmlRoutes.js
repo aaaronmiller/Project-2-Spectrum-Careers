@@ -11,25 +11,20 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/profile", function(req, res) {
+  app.get("/myaccount", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("profile", {
+      res.render("myaccount", {
         msg: "",
         examples: dbExamples
       });
     });
   });
-  app.get("/profile/question", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("profile/question", {
-        msg: "",
-        examples: dbExamples
-      });
-    });
+  app.get("/question", function(req, res) {
+    res.render("question");
   });
 
-  app.get("/survey", function(req, res) {
-     res.render("survey");
+  app.get("/signup", function(req, res) {
+     res.render("signup");
   });
 
   // Load example page and pass in an example by id

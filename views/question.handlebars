@@ -1,18 +1,66 @@
+<header>
+<!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Spectrum</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+        aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/myaccount">My Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Employer</a>
+          </li>
+        </ul>
+        <form class="form-inline">
+          <div class="md-form my-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <span class="input-group-btn">
+              <button class="btn purple-gradient btn-sm" type="button">Search</button>
+            </span>
+            <span class="input-group-btn">
+              <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/signup';" type="button">Sign Up</button>
+            </span>
+            <span class="input-group-btn">
+              <button class="g-signin2" id="googleId" data-onsuccess="onSignIn" data-onfailure="onFailure"
+                data-theme="dark"></button>
+            </span> </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="view"
+    style="background-image: url('img/pawel-czerwinski-3k9PGKWt7ik-unsplash.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1;">
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-gradient align-items-center">
+      <!-- Content -->
+      <br>
+      <br><br>
+      
 <div id="home">
-     <div class="container">
-          <div class="row">
-               <div class="col-8 offset-2">
-                    <h2>Megadocious Super Survey!!</h2>
-                    <div class="jumbotron jumbotron-fluid" style="position: fixed; top: 3em; right: 1em;">
-                         <div class="container">
-                              <h1 class="display-4">Results:</h1><br>
-                              <p class="lead">A:<span class="AA">0</span><br>B:<span class="BB">0</span><br>C:<span
-                                        class="CC">0</span><br>D:<span class="DD">0</span></p>
-                         </div>
-                    </div>
+  <div class="container">   
+               <br>
+     
+     <h5 class="mb-3 wow text-center white-text fadeInLeft" data-wow-delay="1s">Megadocious Super Survey!</h5>
+     <br>
+    <div class="row">
+        {{!-- Result --}}
+          <div class="jumbotron jumbotron-fluid" style="position: fixed; top: 10em; right: 20em;">
+            <div class="container">
+              <h1 class="display-5">Results:</h1><br>
+                <p class="lead">A:<span class="AA">0</span><br>B:<span class="BB">0</span><br>C:<span
+                   class="CC">0</span><br>D:<span class="DD">0</span></p>
+            </div>
+          </div>
+                    <div class="col-md-6">
 
-
-                    <form class="clearfix mb-4" action="POST">
+               <form class="clearfix mb-4" action="POST">                         
                          <div class="form-group">
                               <label for="1">1. When you encounter a group of strangers, do you:</label><br>
                               <input type="radio" name="1" class="btn" value="1" id="q1">a.Talk to everybody you meet
@@ -200,6 +248,12 @@
                               <input type="radio" name="25" class="btn" value="-1">b. Not cool-hearted.<br>
                          </div>
 
+                                        </form>
+
+                    </div>
+                                        <div class="col-md-6">
+
+                    <form class="clearfix mb-4" action="POST">                         
                          <div class="form-group">
                               <label for="26">26. Which is more desirable:</label><br>
                               <input type="radio" name="26" class="btn" value="1">a. Justice.<br>
@@ -370,17 +424,141 @@
                               been
                               made.<br>
                          </div>
+                                        </form>
 
-               </div>
+</div>
 
-               <button id="submit" class="btn btn-primary float-right">Submit</button>
-               </form>
-
+               <button class="btn purple-gradient" id="submit">Submit</button>
           </div>
      </div>
 </div>
-</div>
+      
+      <!-- Content -->
+    </div>
+    <!-- Mask & flexbox options-->
+  </div>
+  </header>
+<!-- Footer -->
+<footer class="page-footer font-small indigo">
 
+  <!-- Footer Links -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="#!">About us</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="#!">Products</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="#!">Awards</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="#!">Help</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="#!">Contact</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+
+    <!-- Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!-- Grid column -->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+          explicabo.
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+    <!-- Grid row-->
+    <div class="row pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-12">
+
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <i class="fab fa-pinterest fa-lg white-text"> </i>
+          </a>
+
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="/"> Spectrum</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script>
@@ -399,7 +577,6 @@
           $(".CC").text(CC);
           $(".DD").text(DD);
      };
-
      $(".btn").click(function myFunc() {
           var moose = $(this).attr("name");
           moose = parseInt(moose);

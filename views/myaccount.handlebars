@@ -12,7 +12,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/profile">Profile</a>
+            <a class="nav-link" href="/myaccount">My Account</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Employer</a>
@@ -23,6 +23,9 @@
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <span class="input-group-btn">
               <button class="btn purple-gradient btn-sm" type="button">Search</button>
+            </span>
+            <span class="input-group-btn">
+              <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/signup';" type="button">Sign Up</button>
             </span>
             <span class="input-group-btn">
               <button class="g-signin2" id="googleId" data-onsuccess="onSignIn" data-onfailure="onFailure"
@@ -57,49 +60,50 @@
                 <!--Header-->
                 <div class="text-center">
                   <h3 class="white-text">
-                    <i class="fas fa-user white-text"></i> Register:</h3>
+                    <i class="fas fa-user white-text"></i> Account Settings</h3>
                   <hr class="hr-light">
                 </div>
                 <!--Body-->
                 <div class="md-form">
-                  <i class="fas fa-user prefix white-text active"></i>
-                  <input type="text" id="form3" class="white-text form-control">
-                  <label for="form3" class="active">Your name</label>
+                  <i class="fas fa-info prefix white-text active"></i>
+                  <input type="email" type="text" id="form2" class="white-text form-control">
+                  <label for="form2" class="active">Username/Email</label>
                 </div>
+                <button class="btn purple-gradient btn-sm" style="position: fixed; top: 9em; right: 2em;" onclick="window.location.href = '/#';" type="button">Update</button>
+
                 <div class="md-form">
-                  <i class="fas fa-envelope prefix white-text active"></i>
-                  <input type="email" id="form2" class="white-text form-control">
-                  <label for="form2" class="active">Your email</label>
-                </div>
-                <div class="md-form">
+                  
                   <i class="fas fa-lock prefix white-text active"></i>
                   <input type="password" id="form4" class="white-text form-control">
-                  <label for="form4">Your password</label>
+                  <label for="form4">Edit Profile</label>
                 </div>
-                <div class="text-center mt-4">
-                  <button class="btn purple-gradient" onclick="window.location.href = '/profile/question';">Sign up</button>
-                  <hr class="hr-light mb-3 mt-4">
-                  <div class="inline-ul text-center">
-                    <a class="p-2 m-2 tw-ic"></a>
-                    <button class="g-signin2" id="googleId" data-onsuccess="onSignIn" data-onfailure="onFailure"
-                      data-theme="dark"></button>
-                    </a>
-                    <a class="p-2 m-2 tw-ic">
-                      <a href="https://www.twitter.com" class="btn"><i class="fab fa-twitter white-text"></i></button>
-                      </a>
-                      <a class="p-2 m-2 li-ic">
-                        <a href="https://www.linkedin.com" class="btn"><i class="fab fa-linkedin-in white-text">
-                          </i></button>
-                        </a>
-                        <a class="p-2 m-2 ins-ic">
-                          <a href="https://www.github.com" class="btn"><i class="fab fa-github white-text">
-                            </i></button>
-                          </a>
-                  </div>
+                <button class="btn purple-gradient btn-sm" style="position: fixed; top: 14em; right: 2em;" onclick="window.location.href = '/#';" type="button">Edit</button>
+
+                <div class="md-form">
+                  
+                  <i class="fas fa-lock prefix white-text active"></i>
+                  <input type="password" id="form4" class="white-text form-control">
+                  <label for="form4">Personality</label>
                 </div>
+                <button class="btn purple-gradient btn-sm" style="position: fixed; top: 20.5em; right: 2em;" onclick="window.location.href = '/question';" type="button">Take a test!</button>
+
+                <div class="md-form">
+                  
+                  <i class="fas fa-lock prefix white-text active"></i>
+                  <input type="password" id="form4" class="white-text form-control">
+                  <label for="form4">Change password</label>
+                </div>
+                <button class="btn purple-gradient btn-sm" style="position: fixed; top: 27em; right: 2em;" onclick="window.location.href = '/#';" type="button">Change</button>
+
+                <div class="md-form">
+                  <i class="fas fa-phone prefix white-text active"></i>
+                  <input type="password" id="form4" class="white-text form-control">
+                  <label for="form4">Phone</label>
+                </div>
+                <button class="btn purple-gradient btn-sm" style="position: fixed; top: 33em; right: 2em;" onclick="window.location.href = '/#';" type="button">Add</button>
               </div>
             </div>
-            <!--/.Form-->
+            <br>
           </div>
           <!--Grid column-->
         </div>
