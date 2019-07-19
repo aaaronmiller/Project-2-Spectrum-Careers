@@ -479,7 +479,8 @@ $("#submit").on("click", function(event)
 {
      event.preventDefault();
     // Wont submit the post if we are missing a temperment or role
-    if (temperment ==="" || role === "") {
+    if (!temperment || !role) {
+         alert("Input missing please fill out form")
       return;
     }
     var resultsString = results.toString();
