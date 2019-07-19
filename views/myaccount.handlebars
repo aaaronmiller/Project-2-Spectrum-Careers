@@ -27,6 +27,7 @@
                 </div>
                 <br>
                 <!--Body-->
+                <form id="resumeForm" action="/myaccount" method="POST" enctype="multipart/form-data">
                 <div class="md-form">
                   <i class="fas fa-camera prefix white-text active"></i>
                   <input type="email" disabled type="text" id="form2" class="white-text form-control">
@@ -36,15 +37,15 @@
 
                 <div class="md-form">
                   <i class="far fa-user-circle prefix white-text active"></i>
-                  <input type="email" disabled type="text" id="form2" class="white-text form-control">
-                  <label for="form2" class="active" id="yournamefromserver">Name: </label>
+                  <input type="text" class="white-text form-control" id="yournamefromserver" name="name">
                 </div>
 
                 {{!-- <button class="btn purple-gradient btn-sm" style="position: fixed; top: 9em; right: 2em;" onclick="window.location.href = '/#';" type="button">Update</button> --}}
                 <div class="md-form">
                   <i class="far fa-envelope prefix white-text active"></i>
-                  <input type="email" disabled type="text" id="form2" class="white-text form-control">
-                  <label for="form2" class="active" id="emailfromserver">Email:</label>
+                  {{!-- <input type="email" disabled type="text" id="form2" class="white-text form-control"> --}}
+                  <input type="email" type="text" class="white-text form-control" id="emailfromserver" name="email">
+                  {{!-- <label for="form2" class="active" id="emailfromserver">Email:</label> --}}
                 </div>
                 {{!-- <button class="btn purple-gradient btn-sm" style="position: fixed; top: 9em; right: 2em;" onclick="window.location.href = '/#';" type="button">Update</button> --}}
 
@@ -79,6 +80,8 @@
                 </div>
                 <button class="btn purple-gradient btn-sm" style="position: fixed; top: 48em; right: 2em;" onclick="window.location.href = '/myaccount';" type="button">Add</button>
               </div>
+              <input type="submit" value="Submit">
+              </form>
             </div>
           </div>
           <!--Grid column-->
@@ -95,4 +98,11 @@
 
 <script>
   new WOW().init();
+</script>
+<script>
+  $("#yournamefromserver").attr(`value`,sessionStorage.getItem("name"));
+  $("#photofromserver").attr('src', sessionStorage.getItem("picture")); 
+  $("#emailfromserver").attr('value',sessionStorage.getItem("email")); 
+  //$("#emailinput").text("Email: " + sessionStorage.getItem("email")); 
+
 </script>

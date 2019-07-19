@@ -6,7 +6,7 @@ module.exports = function userdata(sequelize, DataTypes) {
     email: DataTypes.STRING,
     photo: DataTypes.STRING,
     resume: DataTypes.STRING,
-    description: DataTypes.TEXT
+    // description: DataTypes.TEXT
   });
   return User;
 

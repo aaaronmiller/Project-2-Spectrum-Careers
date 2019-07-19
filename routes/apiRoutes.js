@@ -10,16 +10,21 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/user/profile',upload.single('file1'), function (req, res, next) {
+  app.post('/myaccount',upload.none(), function (req, res, next) {
 
     console.log("posting to database");
     console.log(req.body);
-    console.log(req.file);
+    // console.log(req.file);
     
     // fb.put(files);
     db.user.create({
-      username: req.body.firstname,
-      description: req.body.bio,
+      name: req.body.name,
+      email: req.body.email
+      // name: DataTypes.STRING,
+      // email: DataTypes.STRING,
+      // photo: DataTypes.STRING,
+      // resume: DataTypes.STRING,
+      // description: DataTypes.TEXT
       
       // resume: req.file
     }).then(function(results) {
@@ -55,7 +60,15 @@ module.exports = function(app) {
     // res.json(req.params.email)
     db.user.findOne({ where: {email: req.params.email} }).then(project => {
       console.log(project);
-      res.send(project|| 'not logged in');
+      if(project)
+      {
+        res.send(true);
+      }
+      else
+      {
+        res.send(false);
+      }
+
   // project will be the first entry of the Projects table with the title 'aProject' || null
     })
   });
