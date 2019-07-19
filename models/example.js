@@ -6,7 +6,9 @@ module.exports = function(sequelize, DataTypes) {
     email: DataTypes.STRING,
     photo: DataTypes.STRING,
     resume: DataTypes.STRING,
-    description: DataTypes.TEXT
+    testAnswers: DataTypes.TEXT,
+    role: DataTypes.TEXT,
+    temperment: DataTypes.TEXT,
   });
    var Employer = sequelize.define("Employer", {
     username: DataTypes.STRING,

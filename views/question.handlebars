@@ -55,7 +55,7 @@
             <div class="container">
               <h1 class="display-5">Results:</h1><br>
                 <p class="lead">A:<span class="AA">0</span><br>B:<span class="BB">0</span><br>C:<span
-                   class="CC">0</span><br>D:<span class="DD">0</span></p>
+                   class="CC">0</span><br>D:<span class="DD">0</span></p><br>Role: <span class="ROLE"></span></p><br>Temperment: <span class="TEMP"></span></p>
             </div>
           </div>
                     <div class="col-md-6">
@@ -579,6 +579,9 @@ function score() {
           $(".BB").text(BB);
           $(".CC").text(CC);
           $(".DD").text(DD);
+          $(".ROLE").text(role);
+          $(".TEMP").text(temperment);
+
           getRole();
 };
 
@@ -621,6 +624,32 @@ function getTemperment() {
      };
 };
      
+$("#submit").on("submit", handleFormSubmit);
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    // Wont submit the post if we are missing a temperment or role
+    if (!temperment || !role) {
+      return;
+    }
+    var resultsString = results.toString();
+    // Constructing a newSUrvey object to hand to the database
+    var newSurvey = {
+      id: TODO:userid,
+      testAnswers: resultsString,
+      role: role,
+      temperment: temperment
+    };
+    submitSurvey(newSurvey);
+  }
+
+  // Submits a new post and brings user to blog page upon completion
+  function submitSurvey(post) {
+    $.post("/api/posts", post, function() {
+      {{!-- TODO: show results in modal popup --}}
+      window.location.href = "/profile";
+    });
+  }
+
 $(".btn").click(function myFunc() {
      var moose = $(this).attr("name");
      moose = parseInt(moose);

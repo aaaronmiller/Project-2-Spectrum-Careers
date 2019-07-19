@@ -45,6 +45,11 @@ module.exports = function(app) {
     });
   })
 
+  app.post("/api/post", function(req, res) {
+    db.User.create(req.body).then(function(dbExample) {
+      res.json(dbExample);
+    });
+  });
 
   // Create a new example
   app.post("/api/examples", function(req, res) {
