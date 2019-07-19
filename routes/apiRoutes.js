@@ -86,6 +86,8 @@ module.exports = function(app) {
       })
       .then(function(dbUser) {
         res.json(dbUser);
+        console.log("FUCKING WORK")
+
       });
   });
   // Delete an example by id
@@ -93,18 +95,6 @@ module.exports = function(app) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
       res.json(dbExample);
     });
-  });
-
-  app.put("/api/survey", function(req, res) {
-    db.User.update(req.body,
-      {
-        where: {
-          email: req.body.email
-        }
-      })
-      .then(function(dbUser) {
-        res.json(dbUser);
-      });
   });
 
 
