@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
 <head>
   <meta charset="utf-8">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
     <meta name="google-signin-client_id" content="443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com">
 <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -21,8 +20,66 @@
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
   <link rel="stylesheet" href="/styles/gBtn.css">
-  <meta name="google-signin-client_id" content="443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com">
 
+  <meta name="google-signin-client_id" content="443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <strong>Spectrum</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+        aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/myaccount">My Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/employer">Employer</a>
+          </li>
+        </ul>
+        <form class="form-inline">
+          <div class="md-form my-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <span class="input-group-btn">
+              <button class="btn purple-gradient btn-sm" type="button">Search</button>
+            </span>
+            <span class="input-group-btn">
+              <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/signup';" type="button">Sign Up</button>
+            </span>
+            <span class="input-group-btn">
+                 <div id="gSignInWrapper">
+    <div id="customBtn"  class="customGPlusSignIn" style="background-image: url('img/singin.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1; position: fixed; top: 0.7em; right: 2em;">
+      <span class="icon"></span>
+      <span id="inText"></span>
+    </div>
+  </div>
+
+  <div id="gSignOutWrapper" onclick="signOut()" style="background-image: url('img/signout.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1; position: fixed; top: 0.7em; right: 2em;">
+      <div id="customBtn" class="customGPlusSignIn">
+      <span class="icon"></span>
+      <span id="outText"></span>
+    </div>
+  </div>
+            </span> 
+            </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
+  
+  <!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
   <script>
     var googleUser = {};
     var myStorage = window.sessionStorage;  
@@ -63,7 +120,12 @@
           console.log('Family Name: ' + profile.getFamilyName());
           console.log("Image URL: " + profile.getImageUrl());
           console.log("Email: " + profile.getEmail());
-          
+
+          $("#photofromserver").attr('src', profile.getImageUrl());
+          $("#yournamefromserver").text("Name: " + profile.getName());
+          $("#emailfromserver").text("Email: " + profile.getEmail());
+
+
           // The ID token you need to pass to your backend:
           var id_token = googleUser.getAuthResponse().id_token;
           console.log("ID Token: " + id_token);
@@ -105,21 +167,130 @@
 
 <body>
   {{{body}}}
-  <div id="gSignInWrapper">
-    <div id="customBtn" class="customGPlusSignIn">
-      <span class="icon"></span>
-      <span id="inText">Sign In</span>
-    </div>
-  </div>
-
-  <div id="gSignOutWrapper" onclick="signOut()">
-      <div id="customBtn" class="customGPlusSignIn">
-      <span class="icon"></span>
-      <span id="outText">Sign Out</span>
-    </div>
-  </div>
+ 
 
   <div id="name"></div>
   <script>runApp();</script>
 </body>
+<!-- Footer -->
+<footer class="page-footer font-small indigo">
+
+  <!-- Footer Links -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="#!">About us</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="#!">Products</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="#!">Awards</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="#!">Help</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <a href="#!">Contact</a>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+
+    <!-- Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!-- Grid column -->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+          explicabo.
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+    <!-- Grid row-->
+    <div class="row pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-12">
+
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <i class="fab fa-pinterest fa-lg white-text"> </i>
+          </a>
+
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="/"> Spectrum</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 </html>

@@ -1,8 +1,10 @@
-html,
+html {
+  /* overflow: scroll; */
+}
 body,
 header,
 .view {
-  height: 2750px;
+  height: 1250px;
 }
 
 
@@ -77,4 +79,37 @@ h5 {
 }
 .jumbotron {
   color: black;
+}
+
+.mdb-select {
+  margin-left: 200px;
+  width: 300px;
+  height: 30px;
+}
+
+#photofrom {
+  font-size: 20px;
+  margin-top: 20px;
+
+}
+#photofromserver {
+  margin-top: -6em;
+  margin-left: 600px;
+
+
+}
+#yournamefromserver {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+#emailfromserver {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+#uploadFile {
+  position: fixed;
+  margin-top: -2em;
+  margin-left: 16em;
 }
