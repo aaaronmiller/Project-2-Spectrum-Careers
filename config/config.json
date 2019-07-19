@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
-    "database": "spectrum_db",
-    "host": "localhost",
+    "username": "n38ta3f80xlc19n9",
+    "password": "n38ta3f80xlc19n9",
+    "database": "y2w3wxldca8enczv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "host": "iqqub58wszna7yoh",
     "dialect": "mysql"
   },
   "test": {
