@@ -135,7 +135,6 @@
           console.log("Email: " + profile.getEmail());
             
             $.ajax({
-
               'url' : `/user/read/${profile.getEmail()}`,
               'type' : 'GET',
             }).then(function(response)
