@@ -16,29 +16,32 @@ module.exports = function(app) {
     console.log(req.body);
     console.log(req.file);
     
-
+    // fb.put(files);
     db.user.create({
-      firstname: req.body.firstname,
-      summary: req.body.bio,
-      resume: req.file
+      username: req.body.firstname,
+      description: req.body.bio,
+      
+      // resume: req.file
     }).then(function(results) {
       // `results` here would be the newly created chirp
       res.end();
     });
 
   })
+
+
   app.post('/employer/profile',upload.none(), function (req, res, next) {
 
     console.log("posting to database");
     console.log(req.body);
 
     // console.log(req.file);
-    
 
     db.Employer.create({
-      jobtitle: req.body.jobtitle,
+      name: req.body.jobtitle,
       bio: req.body.bio,
-      companysize: req.body.companysize
+
+      // companysize: req.body.companysize
     }).then(function(results) {
       // `results` here would be the newly created chirp
       res.end();
@@ -47,10 +50,14 @@ module.exports = function(app) {
 
 
   // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
+  app.get("/user/read/:email", function(req, res) {
+    // search for attributes
+    // res.json(req.params.email)
+    db.user.findOne({ where: {email: req.params.email} }).then(project => {
+      console.log(project);
+      res.send(project|| 'not logged in');
+  // project will be the first entry of the Projects table with the title 'aProject' || null
+    })
   });
 
   // Delete an example by id
@@ -60,3 +67,8 @@ module.exports = function(app) {
     });
   });
 };
+
+
+// fb.ref().then(function(downloadURL) {
+//   console.log('File available at', downloadURL)
+// });

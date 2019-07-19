@@ -18,14 +18,19 @@
   <title>Spectrum</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
   <link rel="stylesheet" href="/styles/gBtn.css">
   <meta name="google-signin-client_id" content="443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com">
 
   <script>
     var googleUser = {};
-    
+    var myStorage = window.sessionStorage;  
     var runApp = function () {
-    $("#gSignOutWrapper").addClass("notActive");
+      if(sessionStorage.length == 0)
+          $("#gSignOutWrapper").addClass("notActive");
+      else
+          $("#gSignInWrapper").addClass("notActive");
 
         gapi.load('auth2', function () {
           // Retrieve the singleton for the GoogleAuth library and set up the client.
@@ -35,7 +40,10 @@
             // Request scopes in addition to 'profile' and 'email'
             //scope: 'additional_scope'
           });
-          attachSignin(document.getElementById('customBtn'));
+          console.log(googleUser);
+            console.log(sessionStorage);
+            if(sessionStorage.length == 0)
+              attachSignin(document.getElementById('customBtn')); 
 
         }); 
 
@@ -55,10 +63,26 @@
           console.log('Family Name: ' + profile.getFamilyName());
           console.log("Image URL: " + profile.getImageUrl());
           console.log("Email: " + profile.getEmail());
-
+          
           // The ID token you need to pass to your backend:
           var id_token = googleUser.getAuthResponse().id_token;
           console.log("ID Token: " + id_token);
+          sessionStorage.setItem("user",`${googleUser.getAuthResponse().id_token}`)
+          sessionStorage.setItem("email", `${profile.getEmail()}`);
+          console.log("you session storage" , `${sessionStorage.getItem('user')}`)
+          console.log("Email: " + profile.getEmail());
+            
+            $.ajax({
+
+              'url' : `/user/read/${profile.getEmail()}`,
+              'type' : 'GET',
+            }).then(function(response)
+            {
+              console.log(response)
+            });
+
+
+
         }, function (error) {
           alert(JSON.stringify(error, undefined, 2));
         });
@@ -70,6 +94,8 @@
         console.log('User signed out.');
         $("#gSignOutWrapper").addClass("notActive");
         $("#gSignInWrapper").removeClass("notActive");
+        sessionStorage.clear();
+          console.log("your clear session storage" , `${sessionStorage.getItem('user')}`)
 
       });
     } 
