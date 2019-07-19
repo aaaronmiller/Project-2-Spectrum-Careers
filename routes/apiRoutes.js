@@ -31,10 +31,7 @@ module.exports = function(app) {
 
     console.log("posting to database");
     console.log(req.body);
-
     // console.log(req.file);
-    
-
     db.Employer.create({
       jobtitle: req.body.jobtitle,
       bio: req.body.bio,
@@ -45,6 +42,12 @@ module.exports = function(app) {
     });
   })
 
+
+  app.post("/api/post", function(req, res) {
+    db.User.create(req.body).then(function(dbExample) {
+      res.json(dbExample);
+    });
+  });
 
   // Create a new example
   app.post("/api/examples", function(req, res) {
@@ -59,4 +62,22 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+
+  app.put("/api/survey", function(req, res) {
+    db.User.update(req.body,
+      {
+        where: {
+          email: req.body.email
+        }
+      })
+      .then(function(dbUser) {
+        res.json(dbUser);
+      });
+  });
+
+
+
+
 };
+
+

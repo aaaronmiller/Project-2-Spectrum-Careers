@@ -431,6 +431,9 @@
           $(".BB").text(BB);
           $(".CC").text(CC);
           $(".DD").text(DD);
+          $(".ROLE").text(role);
+          $(".TEMP").text(temperment);
+
           getRole();
      };
 
@@ -472,18 +475,48 @@
                return;
           };
      };
+};
+     
+$("#submit").on("submit", handleFormSubmit);
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    // Wont submit the post if we are missing a temperment or role
+    if (!temperment || !role) {
+      return;
+    }
+    var resultsString = results.toString();
+    // Constructing a newSUrvey object to hand to the database
+    var newSurvey = {
+      email: email,
+      testAnswers: resultsString,
+      role: role,
+      temperment: temperment
+    };
+    submitSurvey(newSurvey);
+  }
 
-     $(".btn").click(function myFunc() {
-          var moose = $(this).attr("name");
-          moose = parseInt(moose);
-          var dog = $(this).val();
-          results[moose] = parseInt(dog);
-          {
-               {
-                    !--console.log('dog:' + dog);
-                    console.log('moose:' + moose);
-                    console.log(results); --}
-          }
-          score();
-     });
+  // Submits a new post and brings user to blog page upon completion
+  function submitSurvey(survey) {
+    $.ajax({
+      method: "PUT",
+      url: "/api/survey",
+      data: survey
+    })
+      .then(function() {
+        window.location.href = "/profile";
+      });
+  }
+
+
+
+$(".btn").click(function myFunc() {
+     var moose = $(this).attr("name");
+     moose = parseInt(moose);
+     var dog = $(this).val();
+     results[moose] = parseInt(dog);
+     {{!-- console.log('dog:' + dog);
+     console.log('moose:' + moose);
+     console.log(results); --}}
+     score();
+});
 </script>
