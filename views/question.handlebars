@@ -634,7 +634,7 @@ $("#submit").on("submit", handleFormSubmit);
     var resultsString = results.toString();
     // Constructing a newSUrvey object to hand to the database
     var newSurvey = {
-      id: TODO:userid,
+      email: email,
       testAnswers: resultsString,
       role: role,
       temperment: temperment
@@ -643,12 +643,18 @@ $("#submit").on("submit", handleFormSubmit);
   }
 
   // Submits a new post and brings user to blog page upon completion
-  function submitSurvey(post) {
-    $.post("/api/posts", post, function() {
-      {{!-- TODO: show results in modal popup --}}
-      window.location.href = "/profile";
-    });
+  function submitSurvey(survey) {
+    $.ajax({
+      method: "PUT",
+      url: "/api/survey",
+      data: survey
+    })
+      .then(function() {
+        window.location.href = "/profile";
+      });
   }
+
+
 
 $(".btn").click(function myFunc() {
      var moose = $(this).attr("name");
