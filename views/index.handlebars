@@ -1,69 +1,31 @@
-<header>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+
+<!-- Full Page Intro -->
+<div class="view"
+  style="background-image: url('img/pawel-czerwinski-3k9PGKWt7ik-unsplash.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1;">
+  <!-- Mask & flexbox options-->
+  <div class="mask rgba-gradient align-items-center">
+    <!-- Content -->
+    <br>
+    <br><br>
+    <br><br>
+    <br>
     <div class="container">
-      <a class="navbar-brand" href="/">
-        <strong>Spectrum</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
-        aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/myaccount">My Account</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Employer</a>
-          </li>
-        </ul>
-        <form class="form-inline">
-          <div class="md-form my-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <span class="input-group-btn">
-        <button class="btn purple-gradient btn-sm" type="button">Search</button>
-    </span>
-    <span class="input-group-btn">
-              <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/signup';" type="button">Sign Up</button>
-            </span>
-          <span class="input-group-btn">
-        <button class="g-signin2 btn-sm" id="googleId" data-onsuccess="onSignIn" data-onfailure="onFailure" data-theme="dark"></button>
-
-    </span>
-          </div>
-        </form>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Navbar -->
-  <!-- Full Page Intro -->
-  <div class="view"
-    style="background-image: url('img/pawel-czerwinski-3k9PGKWt7ik-unsplash.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1;">
-    <!-- Mask & flexbox options-->
-    <div class="mask rgba-gradient align-items-center">
-      <!-- Content -->
-      <br>
-      <br><br>
-      <br><br>
-      <br>
-      <div class="container">
-        <!--Grid row-->
-        <div class="row">
-          <!--Grid column-->
-          <div class="col-md-3"></div>
-          <div class="col-md-6  white-text text-center text-md-left">
-            <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s"><img
-                src="img/spectumONE (2).png" class="title" alt="" srcset=""> </h1>
-            <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-            <h5 class="mb-3 wow text-center fadeInLeft" data-wow-delay="1s">Let your personality radiate. Don't let categories define you.</h5>
-          </div>
-          <!--Grid column-->
-          <!--Grid column-->
-          <!--1st row ended-->
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-md-3"></div>
+        <div class="col-md-6  white-text text-center text-md-left">
+          <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s"><img
+              src="img/spectumONE (2).png" class="title" alt="" srcset=""> </h1>
+          <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+          <h5 class="mb-3 wow text-center fadeInLeft" data-wow-delay="1s">Let your personality radiate. Don't let
+            categories define you.</h5>
         </div>
-        <div class="row mt-5">
+        <!--Grid column-->
+        <!--Grid column-->
+        <!--1st row ended-->
+      </div>
+      <div class="row mt-5">
         <div class="col-xl-2"></div>
         <div class="col-xl-8">
 
@@ -73,223 +35,66 @@
               <!--Header-->
               <div class="text-center">
                 <h3 class="white-text">
-                  <i class="fas fa-search white-text"></i>  Job Search</h3>
-                <hr class="hr-light">
+                  <i class="fas fa-search white-text"></i> Job Search</h3>
               </div>
               <!--Body-->
               <div class="md-form">
                 <i class="far fa-id-badge prefix white-text active"></i>
-                <input type="text" id="form3" class="white-text form-control">
-                <label for="form3" class="active">Job Title</label>
+                <input type="text" class="white-text form-control">
+                <label for="form3"> Job Title</label>
               </div>
               <div class="md-form">
                 <i class="fas fa-location-arrow prefix white-text active"></i>
                 <input type="text" class="white-text form-control" id="inputCityMD">
                 <label for="inputCityMD">Your Location</label>
-              
-              
+
+
               </div>
-    </select>
               <div class="md-form">
                 <i class="far fa-user prefix white-text active"></i>
-                <input type="text" class="white-text form-control" id="inputCityMD">
+                {{!-- <input type="text" class="white-text form-control" id="inputCityMD"> --}}
                 <label for="form4">Personality</label>
-                
+                <select class="mdb-select">
+                  <option value="" selected>Choose option</option>
+                  <option value="1">Red: Leader</option>
+                  <option value="2">Green: Planner</option>
+                  <option value="3">Yellow: Motivator</option>
+                  <option value="4">Blue: Critical Thinker</option>
+                </select>
+
               </div>
               <div class="text-center mt-4">
-                <button class="btn purple-gradient" id="btn-one" onclick="scrollWin()">Search</button>               
+                <button class="btn purple-gradient" id="btn-one" onclick="scrollWin()">Search</button>
               </div>
             </div>
           </div>
         </div>
-        </div>
-        <!--/.Form-->
-        <!--Grid column-->
-        <!--Grid row-->
       </div>
-      <!-- Content -->
+      <!--/.Form-->
+      <!--Grid column-->
+      <!--Grid row-->
     </div>
-    <!-- Mask & flexbox options-->
+    <!-- Content -->
   </div>
+  <!-- Mask & flexbox options-->
   <!-- Full Page Intro -->
-</header>
-<!-- Main navigation -->
+  <!-- Main navigation -->
+  <!--Main Layout-->
+
+</div>
+
 <!--Main Layout-->
-<main>
-  <div class="container">
-    <!--Grid row-->
-    <div class="row py-5">
-      <!--Grid column-->
-      <div class="col-md-12 text-center">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-          est laborum.</p>
-      </div>
-      <!--Grid column-->
-    </div>
-    <!--Grid row-->
-  </div>
-</main>
-<!--Main Layout-->
-<!-- Footer -->
-<footer class="page-footer font-small indigo">
 
-  <!-- Footer Links -->
-  <div class="container">
-
-    <!-- Grid row-->
-    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
-
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">About us</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">Products</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">Awards</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">Help</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <a href="#!">Contact</a>
-        </h6>
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row-->
-    <hr class="rgba-white-light" style="margin: 0 15%;">
-
-    <!-- Grid row-->
-    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
-
-      <!-- Grid column -->
-      <div class="col-md-8 col-12 mt-5">
-        <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem
-          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-          explicabo.
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row-->
-    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
-
-    <!-- Grid row-->
-    <div class="row pb-3">
-
-      <!-- Grid column -->
-      <div class="col-md-12">
-
-        <div class="mb-5 flex-center">
-
-          <!-- Facebook -->
-          <a class="fb-ic">
-            <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
-          </a>
-          <!-- Twitter -->
-          <a class="tw-ic">
-            <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
-          </a>
-          <!-- Google +-->
-          <a class="gplus-ic">
-            <i class="fab fa-google-plus-g fa-lg white-text mr-4"> </i>
-          </a>
-          <!--Linkedin -->
-          <a class="li-ic">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
-          </a>
-          <!--Instagram-->
-          <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
-          </a>
-          <!--Pinterest-->
-          <a class="pin-ic">
-            <i class="fab fa-pinterest fa-lg white-text"> </i>
-          </a>
-
-        </div>
-
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row-->
-
-  </div>
-  <!-- Footer Links -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2019 Copyright:
-    <a href="/"> Spectrum</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
 
 <!-- SCRIPTS -->
-<!-- JQuery -->
-<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="js/mdb.min.js"></script>
 <script>
   new WOW().init();
 </script>
 <script>
-      function onFailure() { console.error('Sign in has failed!'); }
-      function onSignIn(googleUser) {
-        // Useful data for your client-side scripts:
-        console.log("adsfgsfdgfsdg");
-        var profile = googleUser.getBasicProfile();
-        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-        console.log('Full Name: ' + profile.getName());
-        console.log('Given Name: ' + profile.getGivenName());
-        console.log('Family Name: ' + profile.getFamilyName());
-        console.log("Image URL: " + profile.getImageUrl());
-        console.log("Email: " + profile.getEmail());
-
-        // The ID token you need to pass to your backend:
-        var id_token = googleUser.getAuthResponse().id_token;
-        console.log("ID Token: " + id_token);
-      }
-    </script>
-    <script>
-      function scrollWin() {
+  function scrollWin() {
     window.scrollBy(0, 1050);
   }
 </script>
-<script>$('#btn-one').click(function() {
-  $('#btn-one').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading...').addClass('disabled');
-});</script>
+<script>$('#btn-one').click(function () {
+    $('#btn-one').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading...').addClass('disabled');
+  });</script>
