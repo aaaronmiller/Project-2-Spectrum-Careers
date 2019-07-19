@@ -7,7 +7,9 @@ header,
   height: 1250px;
 }
 
-
+::-webkit-scrollbar { 
+  display: none; 
+}
 @media (max-width: 740px) {
   html,
   body,
@@ -112,4 +114,17 @@ h5 {
   position: fixed;
   margin-top: -2em;
   margin-left: 16em;
+}
+
+#btnaccount1{
+  margin-top: -10em;
+}
+#btnaccount2{
+  margin-top: -11em;
+}
+#btnaccount3{
+  margin-top: -11em;
+}
+#btnaccount4{
+  margin-top: -11em;
 }
