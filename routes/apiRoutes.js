@@ -72,7 +72,17 @@ module.exports = function(app) {
   // project will be the first entry of the Projects table with the title 'aProject' || null
     })
   });
-
+  app.put("/api/survey", function(req, res) {
+    db.user.update(req.body,
+      {
+        where: {
+          email: req.body.email
+        }
+      })
+      .then(function(dbUser) {
+        res.json(dbUser);
+      });
+  });
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
