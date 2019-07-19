@@ -8,13 +8,6 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-app.set('trust proxy', 1) // trust first proxy
-app.use(session({
-  secret: 'spectrumuser',
-  resave: false,
-  saveUninitialized: false,
-  cookie: { secure: true }
-}))
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
