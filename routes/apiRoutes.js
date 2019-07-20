@@ -10,7 +10,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/myaccount',upload.none(), function (req, res, next) {
+  app.post('/jobseeker/profile',upload.none(), function (req, res, next) {
 
     console.log("posting to database");
     console.log(req.body);
@@ -42,8 +42,8 @@ module.exports = function(app) {
     // console.log(req.file);
 
     db.Employer.create({
-      name: req.body.jobtitle,
-      bio: req.body.bio,
+      name: req.body.name,
+      email: req.body.email
 
       // companysize: req.body.companysize
     }).then(function(results) {

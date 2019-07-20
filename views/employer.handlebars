@@ -29,13 +29,12 @@
 
                             <div class="md-form">
                                 <i class="far fa-user-circle prefix white-text active"></i>
-                                <input type="email" disabled type="text" id="form2" class="white-text form-control">
-                                <label for="form2" class="active" id="yournamefromserver">Name: </label>
+                                <input type="text" class="white-text form-control" id="yournamefromserver" name="name">
+
                             </div>
                             <div class="md-form">
                                 <i class="far fa-envelope prefix white-text active"></i>
-                                <input type="email" disabled type="text" id="form2" class="white-text form-control">
-                                <label for="form2" class="active" id="emailfromserver">Email:</label>
+                  <input type="email" type="text" class="white-text form-control" id="emailfromserver" name="email">
                             </div>
 
                             <div class="md-form">
@@ -101,8 +100,13 @@
     new WOW().init();
 </script>
 <script>
+<<<<<<< HEAD
 $(document).ready(function() {
     new WOW().init();
+=======
+
+$( document ).ready(function() {
+>>>>>>> Development
     var phone = "";
     var location = "";
     var bio = "";
@@ -154,7 +158,11 @@ $(document).ready(function() {
             data: formdata
         })
             .then(function () {
+<<<<<<< HEAD
             window.location.href = "/myaccount";
+=======
+               // { { !--window.location.href = "/myaccount"; --} }
+>>>>>>> Development
             });
     }
 });
