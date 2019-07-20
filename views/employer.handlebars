@@ -19,42 +19,67 @@
                             </div>
                             <!--Body-->
                             <div class="md-form">
+                                <i class="fas fa-camera prefix white-text active"></i>
+                                <input type="email" disabled type="text" id="form2" class="white-text form-control">
+                                <label for="form2" class="active" id="photofrom">Photo: </label>
+                                <img id="photofromserver" class="rounded-circle img-fluid"
+                                    style="width:75px;height:75px;"></img>
+                            </div>
+
+
+                            <div class="md-form">
                                 <i class="far fa-user-circle prefix white-text active"></i>
                                 <input type="email" disabled type="text" id="form2" class="white-text form-control">
-                                <label for="form2" class="active" id="yournamefromserver">Company Name: </label>
+                                <label for="form2" class="active" id="yournamefromserver">Name: </label>
                             </div>
                             <div class="md-form">
                                 <i class="far fa-envelope prefix white-text active"></i>
                                 <input type="email" disabled type="text" id="form2" class="white-text form-control">
-                                <label for="form2" class="active" id="emailfromserver">Company Email:</label>
+                                <label for="form2" class="active" id="emailfromserver">Email:</label>
                             </div>
 
                             <div class="md-form">
-
                                 <i class="fas fa-lock prefix white-text active"></i>
-                                <input type="text" id="form4" class="white-text form-control">
-                                <label for="form4">Job Description</label>
+                                <input type="text" id="bio" class="white-text form-control" style="height:300px">
+                                <label for="bio">Submit company bio in plaintext</label>
+                                <div class="text-right mt-1">
+                                    <button class="btn purple-gradient btn-sm" id="submitBio"
+                                        type="button">Edit</button>
+                                </div>
                             </div>
-
                             <div class="md-form">
-
-                                <i class="fas fa-lock prefix white-text active"></i>
-                                <input type="text" id="form4" class="white-text form-control">
-                                <label for="form4">Upload a file: <input type="file" name="file1" accept=".doc,.docx,.pdf" id="uploadFile"></label>
+                                <i class="fas fa-phone prefix white-text active"></i>
+                                <input type="text" id="phone" class="white-text form-control">
+                                <label for="phone">Phone</label>
+                                <div class="text-right mt-1">
+                                    <button class="btn purple-gradient btn-sm" id="submitPhone"
+                                        type="button">Add</button>
+                                </div>
                             </div>
-                            <div class="text-center mt-4">
-                                <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/profile';">Update</button>
+                        </div>
+
+
+                        <div class="md-form">
+                            <i class="fas fa-phone prefix white-text active"></i>
+                            <input type="text" id="location" class="white-text form-control">
+                            <label for="location">Location</label>
+                            <div class="text-right mt-1">
+                                <button class="btn purple-gradient btn-sm" id="submitLocation"
+                                    type="button">Add</button>
                             </div>
                         </div>
                     </div>
+
                 </div>
-                <!--Grid column-->
             </div>
-            <!--Grid row-->
         </div>
-        <!-- Content -->
-        </div>
-        </div>
+        <!--Grid column-->
+    </div>
+    <!--Grid row-->
+</div>
+<!-- Content -->
+</div>
+</div>
 
 {{!-- From Keil --}}
 {{!-- <form id="resumeForm" action="/employer/profile" method="POST" enctype="multipart/form-data">
@@ -73,5 +98,62 @@
 </form> --}}
 
 <script>
-  new WOW().init();
+    new WOW().init();
+</script>
+<script>
+    var phone = "";
+    var location = "";
+    var bio = "";
+    $("#yournamefromserver").attr(`value`, sessionStorage.getItem("name"));
+    $("#photofromserver").attr('src', sessionStorage.getItem("picture"));
+    $("#emailfromserver").attr('value', sessionStorage.getItem("email"));
+    //$("#emailinput").text("Email: " + sessionStorage.getItem("email")); 
+    $("#submitPhone").on("click", function (event) {
+        event.preventDefault();
+        phone = $("input[id=phone]").val();
+        console.log(phone);
+        var emailtest = sessionStorage.getItem("email");
+        var employerObject = {
+            email: emailtest,
+            phone: phone
+        };
+        submitEmployer(employerObject);
+    });
+
+    $("#submitBio").on("click", function (event) {
+        event.preventDefault();
+        bio = $("input[id=bio]").val();
+        console.log(resume);
+        var emailtest = sessionStorage.getItem("email");
+        var employerObject = {
+            email: emailtest,
+            bio: bio
+        };
+        submitEmployer(employerObject);
+    });
+
+    $("#submitLocation").on("click", function (event) {
+        event.preventDefault();
+        location = $("input[id=location]").val();
+        console.log(location);
+        var emailtest = sessionStorage.getItem("email");
+        var employerObject = {
+            email: emailtest,
+            location: location
+        };
+        submitEmployer(employerObject);
+    });
+
+
+    function submitEmployer(formdata) {
+        $.ajax({
+            method: "PUT",
+            url: "/api/updateEmployer",
+            data: formdata
+        })
+            .then(function () {
+                { { !--window.location.href = "/myaccount"; --} }
+            });
+    }
+
 </script>
