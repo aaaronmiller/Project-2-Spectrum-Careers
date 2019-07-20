@@ -50,10 +50,10 @@
                 <div class="md-form">
                    {{!-- TODO: this part could use a larger text box for input   --}}
                   <i class="fas fa-lock prefix white-text active"></i>
-                  <input type="text" id="resume" class="white-text form-control" style="height:300px">
+                  <input type="text" disabled id="resume" class="white-text form-control">
                   <label for="resume">Submit resume in plaintext</label>
                   <div class="text-right mt-1">
-                <button class="btn purple-gradient btn-sm" id="submitResume" type="button">Edit</button>
+                <button class="btn purple-gradient btn-sm" id="submitResume" onclick="window.location.href = '/profile';" type="button">Edit</button>
                 </div>
                 </div>
 
@@ -66,11 +66,6 @@
                 <button class="btn purple-gradient btn-sm" id="btnaccount2" onclick="window.location.href = '/question';" type="button">Take a test!</button>
                 </div>
                 </div>
-
-         
-                </form>
-
-               
                 <div class="md-form">
                   <i class="fas fa-phone prefix white-text active"></i>
                   <input type="text" id="phone" class="white-text form-control">
@@ -79,17 +74,16 @@
                      <button class="btn purple-gradient btn-sm" id="submitPhone" type="button">Add</button>
                     </div>
                 </div>
-              </div>
-               
-               
+              </div> 
                 <div class="md-form">
-                  <i class="fas fa-phone prefix white-text active"></i>
+                  <i class="fas fa-location-arrow prefix white-text active"></i>
                   <input type="text" id="location" class="white-text form-control">
                   <label for="location">Location</label>
                     <div class="text-right mt-1">
                      <button class="btn purple-gradient btn-sm" id="submitLocation" type="button">Add</button>
                     </div>
                 </div>
+                </form>
               </div>
               {{!-- <input type="submit" value="Submit"> --}}
               
@@ -158,7 +152,7 @@ $("#submitLocation").on("click", function(event)
 });
 
 
-  function submitUser(formdata) {
+  {{!-- function submitUser(formdata) {
     $.ajax({
       method: "PUT",
       url: "/api/updateUser",
@@ -167,6 +161,6 @@ $("#submitLocation").on("click", function(event)
       .then(function() {
         {{!-- window.location.href = "/myaccount"; --}}
       });
-  }
+  } --}}
 
 </script>

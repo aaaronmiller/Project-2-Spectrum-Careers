@@ -263,7 +263,20 @@
 			</div>
 		</section> --}}
 <!--Main Layout-->
-<div class="container">
+ <div id="loading">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+<div class="container" id="demo">
 <div class="row">
 <div class="col-md-12 col-lg-8 mb-5">
 <div class="p-5 bg-white">
@@ -313,9 +326,12 @@
 </script>
 <script>
   function scrollWin() {
-    window.scrollBy(0, 1050);
+    window.scrollBy(0, 2000);
   }
 </script>
-<script>$('#btn-one').click(function () {
-    $('#btn-one').html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>Loading...').addClass('disabled');
-  });</script>
+<script>
+        $("#demo").hide();
+    $("#btn-one").click(function() {                    
+                $("#demo").show();
+    });
+  </script>
