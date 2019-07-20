@@ -1,27 +1,31 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="utf-8">
-    <script src="https://apis.google.com/js/platform.js"></script>
-    <meta name="google-signin-client_id" content="443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com">
-<link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">  <!-- Font Awesome -->
+  <script src="https://apis.google.com/js/platform.js"></script>
+  <meta name="google-signin-client_id"
+    content="443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com">
+  <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="css/mdb.min.css" rel="stylesheet">
 
-   <!-- Your custom styles (optional) -->
+  <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
   <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spectrum</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
   <link rel="stylesheet" href="/styles/gBtn.css">
 
-  <meta name="google-signin-client_id" content="443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com">
+  <meta name="google-signin-client_id"
+    content="443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
     <div class="container">
@@ -48,61 +52,64 @@
               <button class="btn purple-gradient btn-sm" type="button">Search</button>
             </span>
             <span class="input-group-btn">
-              <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/signup';" type="button">Sign Up</button>
+              <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/signup';" type="button">Sign
+                Up</button>
             </span>
             <span class="input-group-btn">
-                 <div id="gSignInWrapper">
-    <div id="customBtn"  class="customGPlusSignIn" style="background-image: url('img/singin.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1; position: fixed; top: 0.7em; right: 2em;">
-      <span class="icon"></span>
-      <span id="inText"></span>
-    </div>
-  </div>
+              <div id="gSignInWrapper">
+                <div id="customBtn" class="customGPlusSignIn"
+                  style="background-image: url('img/singin.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1; position: fixed; top: 0.7em; right: 2em;">
+                  <span class="icon"></span>
+                  <span id="inText"></span>
+                </div>
+              </div>
 
-  <div id="gSignOutWrapper" onclick="signOut()" style="background-image: url('img/signout.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1; position: fixed; top: 0.7em; right: 2em;">
-      <div id="customBtn" class="customGPlusSignIn">
-      <span class="icon"></span>
-      <span id="outText"></span>
-    </div>
-  </div>
-            </span> 
-            </div>
+              <div id="gSignOutWrapper" onclick="signOut()"
+                style="background-image: url('img/signout.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1; position: fixed; top: 0.7em; right: 2em;">
+                <div id="customBtn" class="customGPlusSignIn">
+                  <span class="icon"></span>
+                  <span id="outText"></span>
+                </div>
+              </div>
+            </span>
+          </div>
         </form>
       </div>
     </div>
   </nav>
   <!-- Navbar -->
-  
+
   <!-- JQuery -->
-<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="js/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
   <script>
     var googleUser = {};
-    var myStorage = window.sessionStorage;  
+    var myStorage = window.sessionStorage;
     var runApp = function () {
-      if(sessionStorage.length == 0)
-          $("#gSignOutWrapper").addClass("notActive");
+      if (sessionStorage.length == 0)
+        $("#gSignOutWrapper").addClass("notActive");
       else
-          $("#gSignInWrapper").addClass("notActive");
+        $("#gSignInWrapper").addClass("notActive");
 
-        gapi.load('auth2', function () {
-          // Retrieve the singleton for the GoogleAuth library and set up the client.
-          auth2 = gapi.auth2.init({
-            client_id: '443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com',
+      gapi.load('auth2', function () {
+        // Retrieve the singleton for the GoogleAuth library and set up the client.
+        auth2 = gapi.auth2.init({
+          client_id: '443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com',
 
-            // Request scopes in addition to 'profile' and 'email'
-            //scope: 'additional_scope'
-          });
-          console.log(googleUser);
-            console.log(sessionStorage);
-            if(sessionStorage.length == 0)
-              attachSignin(document.getElementById('customBtn')); 
+          // Request scopes in addition to 'profile' and 'email'
+          //scope: 'additional_scope'
+        });
+        console.log(googleUser);
+        console.log(sessionStorage);
+        if (sessionStorage.length == 0)
+          attachSignin(document.getElementById('customBtn'));
 
-        }); 
+      });
 
     };
 
@@ -120,7 +127,7 @@
           console.log('Family Name: ' + profile.getFamilyName());
           console.log("Image URL: " + profile.getImageUrl());
           console.log("Email: " + profile.getEmail());
-          sessionStorage.setItem("token",`${googleUser.getAuthResponse().id_token}`)
+          sessionStorage.setItem("token", `${googleUser.getAuthResponse().id_token}`)
           sessionStorage.setItem("picture", `${profile.getImageUrl()}`);
           sessionStorage.setItem("email", `${profile.getEmail()}`);
           sessionStorage.setItem("name", `${profile.getName()}`);
@@ -129,28 +136,25 @@
           var id_token = googleUser.getAuthResponse().id_token;
           console.log("ID Token: " + id_token);
 
-          console.log("you session storage" , `${sessionStorage.getItem('user')}`)
+          console.log("you session storage", `${sessionStorage.getItem('user')}`)
           console.log("Email: " + profile.getEmail());
-            
-            $.ajax({
-              'url' : `/user/read/${profile.getEmail()}`,
-              'type' : 'GET',
-            }).then(function(response)
-            { 
-              if(response)
-              {
 
-                  //window.location.href = "/";
-                  window.location.href = "/myaccount";
+          $.ajax({
+            'url': `/user/read/${profile.getEmail()}`,
+            'type': 'GET',
+          }).then(function (response) {
+            if (response) {
 
-              }
-              else
-              {
-                  window.location.href = "/myaccount";
+              //window.location.href = "/";
+              window.location.href = "/myaccount";
 
-                
-              }
-            });
+            }
+            else {
+              window.location.href = "/myaccount";
+
+
+            }
+          });
 
 
 
@@ -166,17 +170,17 @@
         $("#gSignOutWrapper").addClass("notActive");
         $("#gSignInWrapper").removeClass("notActive");
         sessionStorage.clear();
-          console.log("your clear session storage" , `${sessionStorage.getItem('user')}`)
+        console.log("your clear session storage", `${sessionStorage.getItem('user')}`)
 
       });
     } 
-   </script>
+  </script>
 
 </head>
 
 <body>
   {{{body}}}
- 
+
 
   <div id="name"></div>
   <script>runApp();</script>
@@ -239,11 +243,13 @@
 
       <!-- Grid column -->
       <div class="col-md-8 col-12 mt-5">
-        <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem
-          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-          explicabo.
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+        <p style="line-height: 1.7rem">What do we do? How are we different?</p>
+        <p>What makes a business stand out in the 21st century? More often than not, doing exceptional work starts with
+          an effective team. And the most effective teams don't form by luck or chance. They are built, by identifying
+          and utilizing the strengths of each member in the group. At Spectrum we identify both the temperment and
+          interaction styles of our applicants to illuminate both why "we do what we do", and how we are most effective
+          at doing it. By organizing teams around both of these principals we leverage current scientific models to
+          produce groups who are able to maximize their productivity and excel at achieving their goals.</p>
       </div>
       <!-- Grid column -->
 
@@ -302,4 +308,5 @@
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
+
 </html>
