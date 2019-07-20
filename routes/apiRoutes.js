@@ -77,7 +77,34 @@ module.exports = function(app) {
   // project will be the first entry of the Projects table with the title 'aProject' || null
     })
   });
+  // TODO: all of these below routes should probably be one route with a variable input route
   app.put("/api/survey", function(req, res) {
+    db.user.update(req.body,
+      {
+        where: {
+          email: req.body.email
+        }
+      })
+      .then(function(dbUser) {
+        res.json(dbUser); 
+
+      });
+  });
+
+  app.put("/api/phone", function(req, res) {
+    db.user.update(req.body,
+      {
+        where: {
+          email: req.body.email
+        }
+      })
+      .then(function(dbUser) {
+        res.json(dbUser); 
+
+      });
+  });
+
+  app.put("/api/resume", function(req, res) {
     db.user.update(req.body,
       {
         where: {
