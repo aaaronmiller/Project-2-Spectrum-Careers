@@ -4,12 +4,7 @@
     <!-- Mask & flexbox options-->
     <div class="mask rgba-gradient align-items-center">
       <!-- Content -->
-      <br>
-      <br><br>
-      <br><br>
-      <br>
-      <br><br>
-      <br>
+      <br><br><br><br><br><br><br><br><br>
       <div class="container">
         <!--Grid row-->
         <div class="row mt-5">
@@ -27,7 +22,7 @@
                 </div>
                 <br>
                 <!--Body-->
-                <form id="resumeForm" action="/myaccount" method="POST" enctype="multipart/form-data">
+               <form id="resumeForm" action="/myaccount" method="POST" enctype="multipart/form-data">
                 <div class="md-form">
                   <i class="fas fa-camera prefix white-text active"></i>
                   <input type="email" disabled type="text" id="form2" class="white-text form-control">
@@ -48,8 +43,7 @@
                 </div>
 
                 <div class="md-form">
-                   {{!-- TODO: this part could use a larger text box for input   --}}
-                  <i class="fas fa-lock prefix white-text active"></i>
+                   <i class="fas fa-lock prefix white-text active"></i>
                   <input type="text" id="resume" class="white-text form-control" style="height:300px">
                   <label for="resume">Submit resume in plaintext</label>
                   <div class="text-right mt-1">
@@ -58,7 +52,6 @@
                 </div>
 
                 <div class="md-form">
-                  
                   <i class="fas fa-lock prefix white-text active"></i>
                   <input type="text" disabled id="form4" class="white-text form-control">
                   <label for="form4">Personality</label>
@@ -66,10 +59,8 @@
                 <button class="btn purple-gradient btn-sm" id="btnaccount2" onclick="window.location.href = '/question';" type="button">Take a test!</button>
                 </div>
                 </div>
-
          
                 </form>
-
                
                 <div class="md-form">
                   <i class="fas fa-phone prefix white-text active"></i>
@@ -80,8 +71,7 @@
                     </div>
                 </div>
               </div>
-               
-               
+                              
                 <div class="md-form">
                   <i class="fas fa-phone prefix white-text active"></i>
                   <input type="text" id="location" class="white-text form-control">
@@ -106,11 +96,9 @@
 </div>
 
 <!-- SCRIPTS -->
-
 <script>
-  new WOW().init();
-</script>
-<script>
+$(document).ready(function() {
+new WOW().init();
 var phone = "";
 var location = "";
 var resume = "";
@@ -158,15 +146,15 @@ $("#submitLocation").on("click", function(event)
 });
 
 
-  function submitUser(formdata) {
+function submitUser(formdata) {
     $.ajax({
       method: "PUT",
       url: "/api/updateUser",
       data: formdata
     })
       .then(function() {
-        {{!-- window.location.href = "/myaccount"; --}}
+        window.location.href = "/myaccount";
       });
-  }
-
+}
+});
 </script>

@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     photo: DataTypes.STRING,
     //defined by profile page
     phone: DataTypes.STRING,
-    bio: DataTypes.STRING,
+    bio: DataTypes.TEXT,
     location: DataTypes.STRING
   });
   return Employer;

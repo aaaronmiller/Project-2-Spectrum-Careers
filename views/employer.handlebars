@@ -101,6 +101,8 @@
     new WOW().init();
 </script>
 <script>
+$(document).ready(function() {
+    new WOW().init();
     var phone = "";
     var location = "";
     var bio = "";
@@ -152,8 +154,8 @@
             data: formdata
         })
             .then(function () {
-                { { !--window.location.href = "/myaccount"; --} }
+            window.location.href = "/myaccount";
             });
     }
-
+});
 </script>
