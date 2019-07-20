@@ -98,9 +98,11 @@
             //scope: 'additional_scope'
           });
           console.log(googleUser);
-            console.log(sessionStorage);
-            if(sessionStorage.length == 0)
-              attachSignin(document.getElementById('customBtn')); 
+          console.log(sessionStorage);
+          console.log("pageload");
+          console.log(window.location.href);
+
+          attachSignin(document.getElementById('customBtn')); 
 
         }); 
 
@@ -110,6 +112,7 @@
       console.log(element.id);
       auth2.attachClickHandler(element, {},
         function (googleUser) {
+
           $("#gSignInWrapper").addClass("notActive");
           $("#gSignOutWrapper").removeClass("notActive");
 
@@ -137,16 +140,28 @@
               'type' : 'GET',
             }).then(function(response)
             { 
+
               if(response)
               {
-
+                  //go home screen update for final product
                   //window.location.href = "/";
                   window.location.href = "/myaccount";
 
               }
               else
               {
-                  window.location.href = "/myaccount";
+                if(window.location.href !== "/myaccount")
+                {
+                  console.log("page loading");
+
+                    window.location.href = "/myaccount";
+                }
+                else
+                {
+                  console.log("page already loaded");
+
+                }
+
 
                 
               }
@@ -166,7 +181,7 @@
         $("#gSignOutWrapper").addClass("notActive");
         $("#gSignInWrapper").removeClass("notActive");
         sessionStorage.clear();
-          console.log("your clear session storage" , `${sessionStorage.getItem('user')}`)
+          console.log(sessionStorage)
 
       });
     } 

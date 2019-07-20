@@ -10,7 +10,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/myaccount',upload.none(), function (req, res, next) {
+  app.post('/myaccount/create',upload.none(), function (req, res, next) {
 
     console.log("posting to database");
     console.log(req.body);
@@ -29,7 +29,11 @@ module.exports = function(app) {
       // resume: req.file
     }).then(function(results) {
       // `results` here would be the newly created chirp
+      //use this to change where the user goes after submit  form!x
+      res.redirect('/myaccount');
+
       res.end();
+      
     });
 
   })
