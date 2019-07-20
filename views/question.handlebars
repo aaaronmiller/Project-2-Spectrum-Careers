@@ -483,6 +483,7 @@ $("#submit").on("click", function(event)
          alert("Input missing please fill out form")
       return;
     }
+    alert("Congratulations! Your personality code is: " + role);
     var resultsString = results.toString();
     // Constructing a newSUrvey object to hand to the database
     var emailtest =  sessionStorage.getItem("email");
@@ -492,10 +493,6 @@ $("#submit").on("click", function(event)
       role: role,
       temperment: temperment
     };
-    {{!-- console.log("adsklfhjdaskjlfhdashrfadlsbnfadshdasjkhf.");
-    console.log(emailtest);
-    console.log(newSurvey); --}}
-
     submitSurvey(newSurvey);
   });
 
