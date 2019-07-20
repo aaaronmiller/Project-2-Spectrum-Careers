@@ -105,6 +105,8 @@
   new WOW().init();
 </script>
 <script>
+
+$( document ).ready(function() {
 var phone = "";
 var location = "";
 var resume = "";
@@ -159,8 +161,8 @@ $("#submitLocation").on("click", function(event)
       data: formdata
     })
       .then(function() {
-        {{!-- window.location.href = "/myaccount"; --}}
-      });
-  } --}}
-
+       {{!-- window.location.href = "/myaccount"; --}}
+     });
+  }  
+});
 </script>

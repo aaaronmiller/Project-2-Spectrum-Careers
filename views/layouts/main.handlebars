@@ -32,6 +32,8 @@
       <a class="navbar-brand" href="/">
         <strong>Spectrum</strong>
       </a>
+
+      
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
         aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -52,6 +54,7 @@
               <button class="btn purple-gradient btn-sm" type="button">Search</button>
             </span>
             <span class="input-group-btn">
+<<<<<<< HEAD
               <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/signup';" type="button">Sign
                 Up</button>
             </span>
@@ -73,12 +76,42 @@
               </div>
             </span>
           </div>
+=======
+              <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/signup'; " type="button">Sign Up</button>
+            </span>
+            <span class="input-group-btn">
+                 <div id="gSignInWrapper" >
+    <div id="customBtn"  class="customGPlusSignIn" style="background-image: url('img/singin.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1; position: fixed; top: 0.7em; right: 2em;">
+      <span class="icon"></span>
+      <span id="inText"></span>
+    </div>
+  </div>
+
+  <div id="gSignOutWrapper" onclick="signOut()" style="background-image: url('img/signout.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1; position: fixed; top: 0.7em; right: 2em;">
+      <div id="customBtn" class="customGPlusSignIn">
+      <span class="icon"></span>
+      <span id="outText"></span>
+    </div>
+  </div>
+   <!-- Button trigger modal -->
+{{!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> --}}
+
+<!-- Modal -->
+            </span> 
+            </div>
+>>>>>>> Development
         </form>
       </div>
     </div>
   </nav>
-  <!-- Navbar -->
+ 
   
+<<<<<<< HEAD
+=======
+  <!-- Navbar -->
+>>>>>>> Development
 
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -102,13 +135,12 @@
         auth2 = gapi.auth2.init({
           client_id: '443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com',
 
-          // Request scopes in addition to 'profile' and 'email'
-          //scope: 'additional_scope'
-        });
-        console.log(googleUser);
-        console.log(sessionStorage);
-        if (sessionStorage.length == 0)
-          attachSignin(document.getElementById('customBtn'));
+            // Request scopes in addition to 'profile' and 'email'
+            //scope: 'additional_scope'
+          });
+          console.log(googleUser);
+          console.log(sessionStorage);
+          attachSignin(document.getElementById('customBtn')); 
 
       });
 
@@ -139,29 +171,70 @@
 
           console.log("you session storage", `${sessionStorage.getItem('user')}`)
           console.log("Email: " + profile.getEmail());
+            
+            $.ajax({
+              'url' : `/user/read/${profile.getEmail()}`,
+              'type' : 'GET',
+            }).then(function(response)
+            { 
+              if(response)
+              {
+                 // $("#exampleModal").modal();
 
-          $.ajax({
-            'url': `/user/read/${profile.getEmail()}`,
-            'type': 'GET',
-          }).then(function (response) {
-            if (response) {
+              }
+              else
+              {
+                  $("#exampleModal").modal();
 
-              //window.location.href = "/";
-              window.location.href = "/myaccount";
-
-            }
-            else {
-              window.location.href = "/myaccount";
-
-
-            }
-          });
+                  //{{!-- window.location.href = "/myaccount"; --}}      
+              }
+            });
 
 
 
         }, function (error) {
           alert(JSON.stringify(error, undefined, 2));
         });
+    }
+
+    function employerCreate()
+    {
+        var employerObject = {
+         name: sessionStorage.getItem("name"),
+          email: sessionStorage.getItem("email")
+        };
+        $.ajax({
+            method: "POST",
+            url: "/employer/profile",
+            data: employerObject
+        })
+            .then(function () {
+
+              console.log("employer created");
+               window.location.href = "/employer";
+            });
+        
+    }
+    
+    function jobseekerCreate(formdata)
+    {
+
+          var jobseekerObject = {
+         name: sessionStorage.getItem("name"),
+          email: sessionStorage.getItem("email")
+        };
+        $.ajax({
+            method: "POST",
+            url: "/jobseeker/profile",
+            data: jobseekerObject
+
+        })
+            .then(function () {
+
+              console.log("employer created");
+               window.location.href = "/myaccount";
+            });
+        
     }
 
     function signOut() {
@@ -180,6 +253,28 @@
 </head>
 
 <body>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">  We noticed you dont have an account!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      
+        Are you an employer or job seeker?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick=" employerCreate()">Employer</button>
+        <button type="button" class="btn btn-primary"  onclick=" jobseekerCreate()">Job Seeker</button>
+      </div>
+    </div>
+  </div>
+</div>
   {{{body}}}
 
 
