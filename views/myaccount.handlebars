@@ -158,10 +158,21 @@ $("#submitLocation").on("click", function(event)
 });
 
 
+  function submitLocation(phone) {
+    $.ajax({
+      method: "PUT",
+      url: "/api/updateUser",
+      data: phone
+    })
+      .then(function() {
+        {{!-- window.location.href = "/myaccount"; --}}
+      });
+  }
+
   function submitPhone(phone) {
     $.ajax({
       method: "PUT",
-      url: "/api/phone",
+      url: "/api/updateUser",
       data: phone
     })
       .then(function() {
@@ -172,7 +183,7 @@ $("#submitLocation").on("click", function(event)
   function submitResume(resume) {
     $.ajax({
       method: "PUT",
-      url: "/api/resume",
+      url: "/api/updateUser",
       data: resume
     })
       .then(function() {

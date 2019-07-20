@@ -77,8 +77,7 @@ module.exports = function(app) {
   // project will be the first entry of the Projects table with the title 'aProject' || null
     })
   });
-  // TODO: all of these below routes should probably be one route with a variable input route
-  app.put("/api/survey", function(req, res) {
+  app.put("/api/updateUser", function(req, res) {
     db.user.update(req.body,
       {
         where: {
@@ -91,44 +90,6 @@ module.exports = function(app) {
       });
   });
 
-  app.put("/api/phone", function(req, res) {
-    db.user.update(req.body,
-      {
-        where: {
-          email: req.body.email
-        }
-      })
-      .then(function(dbUser) {
-        res.json(dbUser); 
-
-      });
-  });
-
-  app.put("/api/resume", function(req, res) {
-    db.user.update(req.body,
-      {
-        where: {
-          email: req.body.email
-        }
-      })
-      .then(function(dbUser) {
-        res.json(dbUser); 
-
-      });
-  });
-
-  app.put("/api/location", function(req, res) {
-    db.user.update(req.body,
-      {
-        where: {
-          email: req.body.email
-        }
-      })
-      .then(function(dbUser) {
-        res.json(dbUser); 
-
-      });
-  });
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
