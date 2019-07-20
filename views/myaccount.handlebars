@@ -124,11 +124,11 @@ $("#submitPhone").on("click", function(event)
     phone = $("input[id=phone]").val();
     console.log(phone);
     var emailtest =  sessionStorage.getItem("email");
-    var phoneObject = {
+    var userObject = {
       email: emailtest,
       phone: phone
     };
-    submitPhone(phoneObject);
+    submitUser(userObject);
 });
 
 $("#submitResume").on("click", function(event)
@@ -137,11 +137,11 @@ $("#submitResume").on("click", function(event)
     resume = $("input[id=resume]").val();
     console.log(resume);
     var emailtest =  sessionStorage.getItem("email");
-    var resumeObject = {
+    var userObject = {
       email: emailtest,
       resume: resume
     };
-    submitResume(resumeObject);
+    submitUser(userObject);
 });
 
 $("#submitLocation").on("click", function(event)
@@ -150,44 +150,23 @@ $("#submitLocation").on("click", function(event)
     location = $("input[id=location]").val();
     console.log(location);
     var emailtest =  sessionStorage.getItem("email");
-    var locationObject = {
+    var userObject = {
       email: emailtest,
       location: location
     };
-    submitLocation(locationObject);
+    submitUser(userObject);
 });
 
 
-  function submitLocation(phone) {
+  function submitUser(formdata) {
     $.ajax({
       method: "PUT",
       url: "/api/updateUser",
-      data: phone
+      data: formdata
     })
       .then(function() {
         {{!-- window.location.href = "/myaccount"; --}}
       });
   }
 
-  function submitPhone(phone) {
-    $.ajax({
-      method: "PUT",
-      url: "/api/updateUser",
-      data: phone
-    })
-      .then(function() {
-        {{!-- window.location.href = "/myaccount"; --}}
-      });
-  }
-
-  function submitResume(resume) {
-    $.ajax({
-      method: "PUT",
-      url: "/api/updateUser",
-      data: resume
-    })
-      .then(function() {
-        {{!-- window.location.href = "/myaccount"; --}}
-      });
-  }
 </script>
