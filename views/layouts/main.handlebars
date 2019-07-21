@@ -54,7 +54,7 @@
               <button class="btn purple-gradient btn-sm" type="button">Search</button>
             </span>
             <span class="input-group-btn">
-<<<<<<< HEAD
+
               <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/signup';" type="button">Sign
                 Up</button>
             </span>
@@ -76,41 +76,12 @@
               </div>
             </span>
           </div>
-=======
-              <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/signup'; " type="button">Sign Up</button>
-            </span>
-            <span class="input-group-btn">
-                 <div id="gSignInWrapper" >
-    <div id="customBtn"  class="customGPlusSignIn" style="background-image: url('img/singin.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1; position: fixed; top: 0.7em; right: 2em;">
-      <span class="icon"></span>
-      <span id="inText"></span>
-    </div>
-  </div>
 
-  <div id="gSignOutWrapper" onclick="signOut()" style="background-image: url('img/signout.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1; position: fixed; top: 0.7em; right: 2em;">
-      <div id="customBtn" class="customGPlusSignIn">
-      <span class="icon"></span>
-      <span id="outText"></span>
-    </div>
-  </div>
-   <!-- Button trigger modal -->
-{{!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button> --}}
-
-<!-- Modal -->
-            </span> 
-            </div>
->>>>>>> Development
         </form>
       </div>
     </div>
   </nav>
-<<<<<<< HEAD
-=======
- 
-  
->>>>>>> Development
+
   <!-- Navbar -->
 
   <!-- JQuery -->
@@ -135,22 +106,12 @@
         auth2 = gapi.auth2.init({
           client_id: '443353292428-8hlpibuo6177kmcisnv3l9pjugpof3ve.apps.googleusercontent.com',
 
-<<<<<<< HEAD
-          // Request scopes in addition to 'profile' and 'email'
-          //scope: 'additional_scope'
-        });
-        console.log(googleUser);
-        console.log(sessionStorage);
-        if (sessionStorage.length == 0)
-          attachSignin(document.getElementById('customBtn'));
-=======
             // Request scopes in addition to 'profile' and 'email'
             //scope: 'additional_scope'
           });
           console.log(googleUser);
           console.log(sessionStorage);
           attachSignin(document.getElementById('customBtn')); 
->>>>>>> Development
 
       });
 
@@ -181,25 +142,6 @@
 
           console.log("you session storage", `${sessionStorage.getItem('user')}`)
           console.log("Email: " + profile.getEmail());
-<<<<<<< HEAD
-
-          $.ajax({
-            'url': `/user/read/${profile.getEmail()}`,
-            'type': 'GET',
-          }).then(function (response) {
-            if (response) {
-
-              //window.location.href = "/";
-              window.location.href = "/myaccount";
-
-            }
-            else {
-              window.location.href = "/myaccount";
-
-
-            }
-          });
-=======
             
             $.ajax({
               'url' : `/user/read/${profile.getEmail()}`,
@@ -218,7 +160,6 @@
                   //{{!-- window.location.href = "/myaccount"; --}}      
               }
             });
->>>>>>> Development
 
 
 
