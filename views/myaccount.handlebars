@@ -4,12 +4,7 @@
     <!-- Mask & flexbox options-->
     <div class="mask rgba-gradient align-items-center">
       <!-- Content -->
-      <br>
-      <br><br>
-      <br><br>
-      <br>
-      <br><br>
-      <br>
+      <br><br><br><br><br><br><br><br><br>
       <div class="container">
         <!--Grid row-->
         <div class="row mt-5">
@@ -27,7 +22,7 @@
                 </div>
                 <br>
                 <!--Body-->
-                <form id="resumeForm" action="/myaccount/create" method="POST" enctype="multipart/form-data">
+               <form id="resumeForm" action="/myaccount" method="POST" enctype="multipart/form-data">
                 <div class="md-form">
                   <i class="fas fa-camera prefix white-text active"></i>
                   <input type="email" disabled type="text" id="form2" class="white-text form-control">
@@ -48,46 +43,43 @@
                 </div>
 
                 <div class="md-form">
-                  
-                  <i class="fas fa-lock prefix white-text active"></i>
-                  <input type="text" disabled id="form4" class="white-text form-control">
-                  <label for="form4">Edit Profile</label>
+                   <i class="fas fa-lock prefix white-text active"></i>
+                  <input type="text" id="resume" class="white-text form-control">
+                  <label for="resume">Submit resume in plaintext</label>
                   <div class="text-right mt-1">
-                <button class="btn purple-gradient btn-sm" id="btnaccount1" onclick="window.location.href = '/profile';" type="button">Edit</button>
+                <button class="btn purple-gradient btn-sm" id="submitResume" onclick="window.location.href = '/profile';" type="button">Edit</button>
                 </div>
                 </div>
 
                 <div class="md-form">
-                  
                   <i class="fas fa-lock prefix white-text active"></i>
                   <input type="text" disabled id="form4" class="white-text form-control">
                   <label for="form4">Personality</label>
                   <div class="text-right mt-1">
                 <button class="btn purple-gradient btn-sm" id="btnaccount2" onclick="window.location.href = '/question';" type="button">Take a test!</button>
                 </div>
-                </div>
-
-                <div class="md-form">
-                  
-                  <i class="fas fa-lock prefix white-text active"></i>
-                  <input type="text" disabled id="form4" class="white-text form-control">
-                  <label for="form4">Change password</label>
-                  <div class="text-right mt-1">
-                <button class="btn purple-gradient btn-sm" id="btnaccount3" onclick="window.location.href = '/myaccount';" type="button">Change</button>
-                </div>
-                </div>
-
+                        
                 <div class="md-form">
                   <i class="fas fa-phone prefix white-text active"></i>
-                  <input type="number" id="form4" class="white-text form-control">
-                  <label for="form4">Phone</label>
-                  <div class="text-right mt-1">
-                <button class="btn purple-gradient btn-sm" id="btnaccount4" onclick="window.location.href = '/myaccount';" type="button">Add</button>
-                </div>
+                  <input type="text" id="phone" class="white-text form-control">
+                  <label for="phone">Phone</label>
+                    <div class="text-right mt-1">
+                     <button class="btn purple-gradient btn-sm" id="submitPhone" type="button">Add</button>
+                    </div>
                 </div>
               </div>
-              <input type="submit" value="Submit">
-              </form>
+                <div class="md-form">
+                  <i class="fas fa-location-arrow prefix white-text active"></i>
+                  <input type="text" id="location" class="white-text form-control">
+                  <label for="location">Location</label>
+                    <div class="text-right mt-1">
+                     <button class="btn purple-gradient btn-sm" id="submitLocation" type="button">Add</button>
+                    </div>
+                </div>
+                </form>
+                </div>
+              </div>
+              {{!-- <input type="submit" value="Submit"> --}}
             </div>
           </div>
           <!--Grid column-->
@@ -97,18 +89,67 @@
       <!-- Content -->
     </div>
     <!-- Mask & flexbox options-->
-  
 </div>
-
 <!-- SCRIPTS -->
-
 <script>
-  new WOW().init();
-</script>
-<script>
+$(document).ready(function() {
+new WOW().init();
+var phone = "";
+var location = "";
+var resume = "";
   $("#yournamefromserver").attr(`value`,sessionStorage.getItem("name"));
   $("#photofromserver").attr('src', sessionStorage.getItem("picture")); 
   $("#emailfromserver").attr('value',sessionStorage.getItem("email")); 
   //$("#emailinput").text("Email: " + sessionStorage.getItem("email")); 
+$("#submitPhone").on("click", function(event)
+{
+     event.preventDefault();
+    phone = $("input[id=phone]").val();
+    console.log(phone);
+    var emailtest =  sessionStorage.getItem("email");
+    var userObject = {
+      email: emailtest,
+      phone: phone
+    };
+    submitUser(userObject);
+});
 
+$("#submitResume").on("click", function(event)
+{
+     event.preventDefault();
+    resume = $("input[id=resume]").val();
+    console.log(resume);
+    var emailtest =  sessionStorage.getItem("email");
+    var userObject = {
+      email: emailtest,
+      resume: resume
+    };
+    submitUser(userObject);
+});
+
+$("#submitLocation").on("click", function(event)
+{
+     event.preventDefault();
+    location = $("input[id=location]").val();
+    console.log(location);
+    var emailtest =  sessionStorage.getItem("email");
+    var userObject = {
+      email: emailtest,
+      location: location
+    };
+    submitUser(userObject);
+});
+
+
+function submitUser(formdata) {
+    $.ajax({
+      method: "PUT",
+      url: "/api/updateUser",
+      data: formdata
+    })
+      .then(function() {
+        window.location.href = "/myaccount";
+      });
+}
+});
 </script>

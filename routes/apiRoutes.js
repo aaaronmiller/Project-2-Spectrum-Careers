@@ -10,14 +10,14 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/myaccount/create',upload.none(), function (req, res, next) {
+  app.post('/jobseeker/profile',upload.none(), function (req, res, next) {
 
     console.log("posting to database");
     console.log(req.body);
     // console.log(req.file);
     
     // fb.put(files);
-    db.user.create({
+    db.User.create({
       name: req.body.name,
       email: req.body.email
       // name: DataTypes.STRING,
@@ -29,11 +29,7 @@ module.exports = function(app) {
       // resume: req.file
     }).then(function(results) {
       // `results` here would be the newly created chirp
-      //use this to change where the user goes after submit  form!x
-      res.redirect('/myaccount');
-
       res.end();
-      
     });
 
   })
@@ -46,8 +42,8 @@ module.exports = function(app) {
     // console.log(req.file);
 
     db.Employer.create({
-      name: req.body.jobtitle,
-      bio: req.body.bio,
+      name: req.body.name,
+      email: req.body.email
 
       // companysize: req.body.companysize
     }).then(function(results) {
@@ -67,7 +63,7 @@ module.exports = function(app) {
   app.get("/user/read/:email", function(req, res) {
     // search for attributes
     // res.json(req.params.email)
-    db.user.findOne({ where: {email: req.params.email} }).then(project => {
+    db.User.findOne({ where: {email: req.params.email} }).then(project => {
       console.log(project);
       if(project)
       {
@@ -81,8 +77,8 @@ module.exports = function(app) {
   // project will be the first entry of the Projects table with the title 'aProject' || null
     })
   });
-  app.put("/api/survey", function(req, res) {
-    db.user.update(req.body,
+  app.put("/api/updateUser", function(req, res) {
+    db.User.update(req.body,
       {
         where: {
           email: req.body.email
@@ -93,6 +89,20 @@ module.exports = function(app) {
 
       });
   });
+
+  app.put("/api/updateEmployer", function(req, res) {
+    db.Employer.update(req.body,
+      {
+        where: {
+          email: req.body.email
+        }
+      })
+      .then(function(dbUser) {
+        res.json(dbUser); 
+
+      });
+  });
+
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {

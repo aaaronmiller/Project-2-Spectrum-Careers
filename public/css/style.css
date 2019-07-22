@@ -97,8 +97,6 @@ h5 {
 #photofromserver {
   margin-top: -6em;
   margin-left: 600px;
-
-
 }
 #yournamefromserver {
   font-size: 20px;
@@ -113,18 +111,23 @@ h5 {
 #uploadFile {
   position: fixed;
   margin-top: -2em;
-  margin-left: 16em;
+  margin-left: 10em;
 }
 
-#btnaccount1{
+#submitResume{
   margin-top: -10em;
 }
 #btnaccount2{
   margin-top: -11em;
 }
-#btnaccount3{
-  margin-top: -11em;
+#submitPhone{
+  margin-top: -11em; 
 }
-#btnaccount4{
-  margin-top: -11em;
+#submitLocation{  
+  margin-left: 9em; 
+  margin-top: -11em; 
+}
+
+#result {
+  height: 10px;
 }
