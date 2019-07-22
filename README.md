@@ -1,6 +1,4 @@
 # Project-2-Spectrum-Careers
-TODO:project summary
-
 What do we do? How are we different?
 
 What makes a business stand out in the 21st century? More often than not, doing exceptional work starts with an effective team.  And the most effective teams don't form by luck or chance. They are built, by identifying and utilizing the strengths of each member in the group. At Spectrum we identify both the temperment and interaction styles of our applicants to illuminate both why "we do what we do", and how we are most effective at doing it. By organizing teams around both of these principals we leverage current scientific models to produce groups who are able to maximize their productivity and excel at achieving their goals.
@@ -16,12 +14,12 @@ To further aid in assigning the right job to each candidate we have matched each
 
 
 # Getting Started
-TODO:installation instructions
+There is none just open the website and enjoy!
 
 # Prerequisites
-
+make sure your blocked third-party cookies is off on your browser
 # Overview
-TODO:project overview
+For this project we wanted to re-invent the way job searching is done by having a completly anonyms client only showing resume and personality type for potential information for the employer that way no discrimation would be possible 
 
 # Deployment
 Navigate to https://github.com/aaaronmiller/Project-2-Spectrum-Careers to clone.
@@ -33,7 +31,7 @@ Visual Studio Code, HTML, CSS, Javascript, JQuery, Bootstrap, Node.js, Express, 
 We use github for version control (https://github.com/your/project/tags).
 
 # In development
-TODO:problems and things to add
+We need to add a job search page and employer search page the data passes to mysql and stores no problem now we just need to append said data to a webpage
 
 # Author
 Aaron Miller, Keil Aloia, Hun Lee
