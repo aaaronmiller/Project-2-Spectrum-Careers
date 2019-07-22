@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "dlgjs123!",
     "database": "spectrum_db",
     "host": "localhost",
     "dialect": "mysql"

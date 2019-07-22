@@ -53,12 +53,7 @@
             <span class="input-group-btn">
               <button class="btn purple-gradient btn-sm" type="button">Search</button>
             </span>
-            <span class="input-group-btn">
-
-              <button class="btn purple-gradient btn-sm" onclick="window.location.href = '/signup';" type="button">Sign
-                Up</button>
-            </span>
-            <span class="input-group-btn">
+            <span class="input-group-btn" style="margin-left:20px">
               <div id="gSignInWrapper">
                 <div id="customBtn" class="customGPlusSignIn"
                   style="background-image: url('img/singin.png'); background-repeat: no-repeat; background-size: cover; background-position: center center; opacity:1; position: fixed; top: 0.7em; right: 2em;">
@@ -159,8 +154,6 @@
                   //{{!-- window.location.href = "/myaccount"; --}}      
               }
             });
-
-
 
         }, function (error) {
           alert(JSON.stringify(error, undefined, 2));
