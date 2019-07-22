@@ -17,7 +17,7 @@ module.exports = function(app) {
     // console.log(req.file);
     
     // fb.put(files);
-    db.user.create({
+    db.User.create({
       name: req.body.name,
       email: req.body.email
       // name: DataTypes.STRING,
@@ -63,7 +63,7 @@ module.exports = function(app) {
   app.get("/user/read/:email", function(req, res) {
     // search for attributes
     // res.json(req.params.email)
-    db.user.findOne({ where: {email: req.params.email} }).then(project => {
+    db.User.findOne({ where: {email: req.params.email} }).then(project => {
       console.log(project);
       if(project)
       {
@@ -78,7 +78,7 @@ module.exports = function(app) {
     })
   });
   app.put("/api/updateUser", function(req, res) {
-    db.user.update(req.body,
+    db.User.update(req.body,
       {
         where: {
           email: req.body.email
