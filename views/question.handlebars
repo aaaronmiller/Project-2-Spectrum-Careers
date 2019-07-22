@@ -15,14 +15,15 @@
                     </h5>
                     <br>
                     <div class="row">
+                   
                          {{!-- Result --}}
-                         <div class="jumbotron jumbotron-fluid" style="position: fixed; top: 10em; right: 20em;">
+                         {{!-- <div class="jumbotron jumbotron-fluid" id="result" style="position: fixed; top: 8em; right: 50em;">
                               <div class="container">
                                    <h1 class="display-5">Results:</h1><br>
                                    <p class="lead">A:<span class="AA">0</span><br>B:<span class="BB">0</span><br>C:<span
                                              class="CC">0</span><br>D:<span class="DD">0</span></p>
                               </div>
-                         </div>
+                         </div> --}}
                          <div class="col-md-6">
 
                               <form class="clearfix mb-4" action="POST">
@@ -402,7 +403,15 @@
 
                          </div>
 
-                         <button class="btn purple-gradient" id="submit">Submit</button>
+                     <div class="card" id="result" style="width: 100%; margin-left: 550px; margin-bottom: 150px;">
+
+                    <div class="card-body">
+                    <h5 class="card-title">Result</h5>
+                         <p class="lead">A:<span class="AA">0</span><br>B:<span class="BB">0</span><br>C:<span
+                              class="CC">0</span><br>D:<span class="DD">0</span></p>
+                    </div>
+                    </div>
+                         <button class="btn purple-gradient" id="submit1">Submit</button>
                     </div>
                </div>
           </div>
@@ -413,6 +422,12 @@
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 {{!-- <script src="models/index.js"></script> --}}
+<script>
+          $("#result").hide();
+    $("#submit1").click(function() {                    
+                $("#result").show();
+    });
+</script>
 <script>
      
      results = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
