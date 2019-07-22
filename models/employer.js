@@ -9,9 +9,17 @@ module.exports = function(sequelize, DataTypes) {
     photo: DataTypes.STRING,
     //defined by profile page
     phone: DataTypes.STRING,
-    bio: DataTypes.STRING,
+    bio: DataTypes.TEXT,
     location: DataTypes.STRING
   });
+
+  Employer.associate = function(models) {
+    // AssociatingEmployer with Posts
+    // When anEmployer is deleted, also delete any associated Posts
+     models.Employer.hasMany(models.Job, {
+        onDelete: "cascade"
+    });
+  };
   return Employer;
-}
+};
   

@@ -1,5 +1,5 @@
 module.exports = function userdata(sequelize, DataTypes) {
-  var User = sequelize.define("user", {
+  var User = sequelize.define("User", {
     // username: DataTypes.STRING,
     // pw: DataTypes.STRING,
 
@@ -13,8 +13,8 @@ module.exports = function userdata(sequelize, DataTypes) {
     location: DataTypes.STRING,
     //defined by survey page
     testAnswers: DataTypes.TEXT,
-    role: DataTypes.TEXT,
-    temperment: DataTypes.TEXT
+    role: DataTypes.STRING,
+    temperment: DataTypes.STRING
   });
   return User;
 
