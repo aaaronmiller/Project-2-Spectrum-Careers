@@ -39,7 +39,7 @@
 
                             <div class="md-form">
                                 <i class="fas fa-lock prefix white-text active"></i>
-                                <input type="text" id="bio" class="white-text form-control" style="height:300px">
+                                <input type="text" id="bio" class="white-text form-control biofromserver" style="height:300px">
                                 <label for="bio">Submit company bio in plaintext</label>
                                 <div class="text-right mt-1">
                                     <button class="btn purple-gradient btn-sm" id="submitBio"
@@ -48,7 +48,7 @@
                             </div>
                             <div class="md-form">
                                 <i class="fas fa-phone prefix white-text active"></i>
-                                <input type="text" id="phone" class="white-text form-control">
+                                <input type="text" id="phone" class="white-text form-control phonefromserver">
                                 <label for="phone">Phone</label>
                                 <div class="text-right mt-1">
                                     <button class="btn purple-gradient btn-sm" id="submitPhone"
@@ -60,7 +60,7 @@
 
                         <div class="md-form">
                             <i class="fas fa-phone prefix white-text active"></i>
-                            <input type="text" id="location" class="white-text form-control">
+                            <input type="text" id="location" class="white-text form-control locationfromserver">
                             <label for="location">Location</label>
                             <div class="text-right mt-1">
                                 <button class="btn purple-gradient btn-sm" id="submitLocation"
@@ -70,7 +70,7 @@
 
                         <div class="md-form">
                             <i class="fas fa-phone prefix white-text active"></i>
-                            <input type="text" id="job" class="white-text form-control">
+                            <input type="text" id="job" class="white-text form-control jobfromserver">
                             <label for="job">Add new Job</label>
                             <div class="text-right mt-1">
                                 <button class="btn purple-gradient btn-sm" id="submitJob"
@@ -115,10 +115,12 @@ $(document).ready(function() {
     var phone = "";
     var location = "";
     var bio = "";
+    var job = "";
     $("#yournamefromserver").attr(`value`, sessionStorage.getItem("name"));
     $("#photofromserver").attr('src', sessionStorage.getItem("picture"));
     $("#emailfromserver").attr('value', sessionStorage.getItem("email"));
     //$("#emailinput").text("Email: " + sessionStorage.getItem("email")); 
+employerInfo();
     $("#submitPhone").on("click", function (event) {
         event.preventDefault();
         phone = $("input[id=phone]").val();
@@ -157,16 +159,28 @@ $(document).ready(function() {
 
     $("#submitJob").on("click", function (event) {
         event.preventDefault();
-        location = $("input[id=location]").val();
-        console.log(location);
+        job = $("input[id=job]").val();
+        console.log(job);
         var emailtest = sessionStorage.getItem("email");
-        var employerObject = {
+        var jobObject = {
             email: emailtest,
             job: job
         };
-        submitEmployer(employerObject);
+        submitJob(jobObject);
     });
 
+
+    function submitJob(formdata) {
+        $.ajax({
+            method: "PUT",
+            url: "/api/updateJob",
+            data: formdata
+        })
+            .then(function () {
+            alert("Job submitted!")
+            window.location.href = "/employer";
+            });
+    }
 
     function submitEmployer(formdata) {
         $.ajax({
@@ -175,8 +189,27 @@ $(document).ready(function() {
             data: formdata
         })
             .then(function () {
-            window.location.href = "/myaccount";
+            window.location.href = "/employer";
             });
+    }
+
+    function employerInfo()
+    {
+        var employerObject = {
+         email: sessionStorage.getItem("email")
+        };
+        console.log(employerObject);
+        $.ajax({
+            method: "GET",
+            url: "/api/employer/employerInfo",
+            data: employerObject
+        })
+        .then(function (req, res) {
+          console.log(req);
+          $(".phonefromserver").attr('value',res.data.phone);
+          $(".biofromserver").attr('value',res.data.resume);
+          $(".locationfromserver").attr('value',res.data.location);
+        }); 
     }
 });
 </script>

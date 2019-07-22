@@ -10,6 +10,73 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/employer/employerInfo"), function(req, res) {
+    console.log(req);
+    db.Employer.findOne({ where: {email: req.params.email} }).then(project => {
+      console.log(JSON.stringify(project));
+      res.json(project);
+  });
+}
+  app.get("/api/user/userInfo"), function(req, res) {
+    console.log(req);
+    db.User.findOne({ where: {email: req.params.email} }).then(project => {
+      console.log(JSON.stringify(project));
+      res.json(project);
+  });
+}
+  app.get("/api/user/locationSearch"), function(req, res) {
+    console.log(req);
+    db.User.findAll({ where: {location: req.params.location} }).then(project => {
+      console.log(JSON.stringify(project));
+      res.json(project);
+  });
+}
+  app.get("/api/user/roleSearch"), function(req, res) {
+    console.log(req);
+    db.User.findAll({ where: {role: req.params.role} }).then(project => {
+      console.log(JSON.stringify(project));
+      res.json(project);
+  });
+}
+  app.get("/api/user/userList"), function(req, res) {
+    console.log(req);
+    db.Example.findAll({}).then(function(project) {
+      console.log(JSON.stringify(project));
+      res.json(project);
+  });
+}
+
+  app.get("/api/user/keywordSearch"), function(req, res) {
+    console.log(req);
+    var keyword = req.query;
+    var resume = "";
+    responseObject = [];
+    db.Example.findAll({}).then(function(project, keyword) {
+      console.log(JSON.stringify(project));
+      for (i=0; i < project.length; i++) {
+        var resume = project[i].resume;
+        if (resume.search(keyword) > 0){
+          responseObject += project[i];
+        }
+      };
+      res.json(responseObject);
+  });
+}
+
+  app.post('/api/admin/createEmployer', function (req, res) {
+    db.Employer.create(req.body)
+    .then(function(dbEmployer) {
+      res.json(dbEmployer); 
+    });
+  });
+
+  app.post('/api/admin/createEmployee', function (req, res) {
+    db.User.create(req.body)
+    .then(function(dbUser) {
+      res.json(dbUser); 
+    });
+  });
+
   app.post('/jobseeker/profile',upload.none(), function (req, res, next) {
 
     console.log("posting to database");
@@ -52,6 +119,12 @@ module.exports = function(app) {
     });
   })
 
+
+  app.post("/api/updateJob", function(req, res) {
+    db.Job.create(req.body).then(function(dbJob) {
+      res.json(dbJob);
+    });
+  });
 
   app.post("/api/post", function(req, res) {
     db.User.create(req.body).then(function(dbExample) {

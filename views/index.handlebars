@@ -150,7 +150,49 @@
 </script>
 <script>
         $("#demo").hide();
-    $("#btn-one").click(function() {                    
+    $("#btn-one").click(function() {  
+                userList();                  
                 $("#demo").show();
     });
+
+
+    function userList()
+    {
+         $.ajax({
+            method: "GET",
+            url: "/api/user/userList"
+        }).then(function (req, res) {
+          console.log(req);
+            }); 
+    }
+    function locationSearch()
+    {
+         $.ajax({
+            method: "GET",
+            url: "/api/user/locationSearch"
+        }).then(function (req, res) {
+          console.log(req);
+            }); 
+    }
+    function roleSearch()
+    {
+         $.ajax({
+            method: "GET",
+            url: "/api//user/roleSearch"
+        }).then(function (req, res) {
+          console.log(req);
+            }); 
+    }
+    function keywordSearch(keyword)
+    {
+         var keywordObject = {
+          query: keyword};
+         $.ajax({
+            method: "GET",
+            url: "/api/user/keywordSearch",
+            data: keywordObject
+        }).then(function (req, res) {
+          console.log(req);
+            }); 
+    }
   </script>

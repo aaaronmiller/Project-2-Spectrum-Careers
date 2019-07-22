@@ -9,7 +9,7 @@ module.exports = function userdata(sequelize, DataTypes) {
     photo: DataTypes.STRING,
     //defined by profile page
     phone: DataTypes.STRING,
-    resume: DataTypes.STRING,
+    resume: DataTypes.TEXT,
     location: DataTypes.STRING,
     //defined by survey page
     testAnswers: DataTypes.TEXT,

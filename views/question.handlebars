@@ -424,9 +424,9 @@
 {{!-- <script src="models/index.js"></script> --}}
 <script>
           $("#result").hide();
-    $("#submit1").click(function() {                    
-                $("#result").show();
-    });
+ //   $("#submit1").click(function() {                    
+//              $("#result").show();
+ //   }); 
 </script>
 <script>
      
@@ -451,6 +451,7 @@
           $(".TEMP").text(temperment);
 
           getRole();
+          getTemperment();
      };
 
 
@@ -491,14 +492,14 @@
                return;
           };
      };
-$("#submit").on("click", function(event)
+$("#submit1").on("click", function(event)
 {
      event.preventDefault();
     // Wont submit the post if we are missing a temperment or role
-    if (!temperment || !role) {
-         alert("Input missing please fill out form")
-      return;
-    }
+    //if (temperment === "" || role === "") {
+    //     alert("Input missing please fill out form")
+    //  return;
+    //}
     alert("Congratulations! Your personality code is: " + role);
     var resultsString = results.toString();
     // Constructing a newSUrvey object to hand to the database
@@ -509,6 +510,7 @@ $("#submit").on("click", function(event)
       role: role,
       temperment: temperment
     };
+    $("#result").show();
     submitSurvey(newSurvey);
   });
 
@@ -516,11 +518,11 @@ $("#submit").on("click", function(event)
   function submitSurvey(survey) {
     $.ajax({
       method: "PUT",
-      url: "/api/survey",
+      url: "/api/updateUser",
       data: survey
     })
       .then(function() {
-        {{!-- window.location.href = "/question"; --}}
+        window.location.href = "/myaccount";
       });
   }
 
